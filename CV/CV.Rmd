@@ -1,0 +1,392 @@
+---
+name: Lorena Abad
+position: "Researcher | Environmental Engineer | MSc. Geospatial Technologies"
+address: |
+         | Schillerstraße 30, 5020 Salzburg, Österreich
+         | Nationality: Ecuadorian, Birthdate: 05/01/1994
+profilepic: lore.jpg
+phone: +43 662 8044 7582 
+email: "lorenacristina.abadcrespo@sbg.ac.at"
+twitter: loreabad6
+github: loreabad6
+linkedin: lorena-abad
+skype:  lorena.abad2
+headcolor: 009ACD
+extrainfo: 05-01-1994
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+always_allow_html: yes
+header-includes:
+  \usepackage{multicol}
+  \usepackage{colortbl}
+  \usepackage{hhline}
+  \definecolor{light-gray}{gray}{0.95}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(rworldmap)
+library(stplanr)
+library(ggrepel)
+library(emojifont)
+library(fontawesome)
+library(kableExtra)
+library(huxtable)
+library(gridExtra)
+```
+
+```{r info}
+# tribble(
+#   ~ which, ~ fact,
+#   "Birth Date", "05-01-1994",
+#   "Nationality", "Ecuadorian"
+# ) %>%
+#   brief_entries(what = fact, when = which)
+```
+
+```{r}
+# \paragraphstyle{I am an environmental engineer from Cuenca, Ecuador specialized in Geospatial Technologies, expected by March 2019. My research scope includes spatial data analysis, particularly focused on R programming; remote sensing and earth observation data analysis, specially optical satellite imagery applied to environmental studies and analyses such as air pollution, land use/land cover change; geostatistical analysis of climate data; and ecological modelling. I feel very keen to pursue a career in research, science, and academia.}
+```
+
+\faIcon{plane} My journey
+============================
+
+```{r edu_plot,fig.align='center', fig.width=5.5, fig.height=3,fig.showtext=TRUE}
+load.fontawesome()
+uni <- fontawesome('fa-university')
+work <- fontawesome('fa-briefcase')
+
+world <- getMap(resolution = "high")
+world <- world %>% st_as_sf()
+cities <- st_sfc(
+    st_point(c(-79.00453,-2.90055)),
+    st_point(c(-9.13333,38.71667)),
+    st_point(c(7.6261,51.9607)),
+    st_point(c(12.9864,47.8029))
+  ) %>%
+  st_sf(name = c('Cuenca, EC','Lisbon, PT','Münster, DE', 'Salzburg, AT')) %>%
+  st_set_crs(4326) %>%
+  mutate(label = c(paste(work,uni, sep = " "),rep(uni,2),work))
+
+routes <- cities %>%
+  points2line() %>%
+  slice(c(2,7,12)) %>%
+  st_segmentize(units::set_units(100, m))
+
+ggplot(data = world) +
+  geom_sf(color = 'white', lwd = 0.1) +
+  xlab("") + ylab("") +
+  geom_sf_text(
+    data = cities,
+    aes(label = label),
+    size = 3,
+    color = '#009ACD',
+    family = "fontawesome-webfont"
+  ) +
+  geom_sf(
+    data = routes, color = '#009ACD', size = 0.5, alpha = 0.5, linetype = 'dotted'
+  ) +
+  coord_sf(crs = 54030, xlim = c(-10000000, 4500000), ylim = c(-390000,6100000)) +
+  theme_minimal() +
+  theme(
+    panel.grid = element_line(color = 'transparent'),
+    plot.margin = margin(-1, 0, -1, 0, "cm"),
+    axis.text = element_blank()
+  )
+```
+
+ \faIcon{briefcase} Professional Experience
+============================================
+
+```{r experience}
+exp <- rorcid::orcid_employments("0000-0003-0554-734X")
+exp$`0000-0003-0554-734X`$`employment-summary` %>%
+  mutate(description = c(
+    'Researcher for the MORPH, RiCoLa, STEC, citizenMORPH, MontEO projects in the Landslide division of the OBIA group.',
+    'Spatio-temporal data analyst for the project: "Study of Cyclists and Pedestrian Mobility Patterns in Cuenca for a Sustainable Mobility".',
+    'CEDIA project "Geo-statistical Inference of Meteorological Data for Azuay and Chimborazo provinces".',
+    'Project "Water Quality and Environmental Variables Monitoring in Artificial Habitats for Endangered Species in Cuenca".',
+    'Project "Determination of Particulate Matter PM10, PM2.5, and noise in Cuenca canton".',
+    'Introduction to Physics and Remote Sensing courses for the Environmental Engineering Career from Universidad de Cuenca.',
+    "Cartographic data gathering organization, topographic correction and categorization of urban land uses, scientific papers analysis for bibliographic review.",
+    "Assess the functioning state of Davis Station sensors, identify similarities and differences of two river basins hydrograms, analyze the effects of temperature and relative humidity on reference evapotranspiration calculation."
+  )) %>%
+  detailed_entries(
+    with = paste(`role-title`, `department-name`, sep = ' - '),
+    when = paste(
+      paste(`start-date.month.value`,`start-date.year.value`, sep = ', '),
+      ifelse(is.na(`end-date.year.value`),"Present",paste(`end-date.month.value`,`end-date.year.value`, sep = ', ')),
+      sep = ' - '
+    ),
+    what = organization.name,
+    where = paste(organization.address.city,organization.address.country, sep =', '),
+    why = description
+    # .protect = FALSE
+  )
+```
+
+\faIcon*{file} Publications
+===========================
+
+```{r pubs}
+tribble(
+  ~ name, ~ journal, ~ date, ~type, ~ bib,
+  "Mapping and Analyzing the Evolution of the Butangbunasi Landslide Using Landsat Time Series with Respect to Heavy Rainfall Events during Typhoons", "Applied Sciences, MDPI", "01, 2020", "Journal Article","Hölbling, D., \\textbf{Abad, L.}, Dabiri, Z., Prasicek, G., Tsai, T.-T., Argentin, A.-L. Mapping and Analyzing the Evolution of the Butangbunasi Landslide Using Landsat Time Series with Respect to Heavy Rainfall Events during Typhoons. Appl. Sci. 2020, 10, 630. https://doi.org/10.3390/app10020630",
+  "An Object-Based Approach for Monitoring the Evolution of Landslide-dammed Lakes and Detecting Triggering Landslides in Taiwan", "ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences", "09, 2019", "Journal Article", "Dabiri, Z., Hölbling, D., \\textbf{Abad, L.}, Prasicek, G., Argentin, A.-L., Tsai, T.-T. (2019). An Object-Based Approach for Monitoring the Evolution of Landslide-dammed Lakes and Detecting Triggering Landslides in Taiwan. ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XLII-3/W8, 103–108. https://doi.org/10.5194/isprs-archives-XLII-3-W8-103-2019",
+  "Assessment of Landslide-Induced Morphology Changes using an Object-Based Image Analysis Approach: A Case Study of Hitardalur, Iceland", "ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences", "09, 2019", "Journal Article", "Dabiri, Z., Hölbling, D., \\textbf{Abad, L.}, Tiede, D. (2019). Assessment of Landslide-Induced Morphology Changes using an Object-Based Image Analysis Approach: A Case Study of Hitardalur, Iceland. ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XLII-3/W8, 109–114. https://doi.org/10.5194/isprs-archives-XLII-3-W8-109-2019",
+  "Distinct mechanisms of landslides in moraines associated with the post-LIA glacier thinning: observations from the Kinzl glacier, Huascarán, Peru","17th International Symposium on Geo-disaster Reduction","08, 2019", "Conference Proceedings","Emmer, A., \\textbf{Abad, L.}, Hölbling, D., Klimeš, J., Štěpánek, P., Zahradníček, P. (2019). Distinct mechanisms of landslides in moraines associated with the post-LIA glacier thinning: observations from the Kinzl glacier, Huascarán, Peru. In 17th International Symposium on Geo-disaster Reduction. Issyk Kul.",
+  "Mapping the Evolution of the Butangbunasi Landslide, Taiwan, using Landsat Time Series", "27th International Union of Geodesy and Geophysics General Assembly", "06, 2019", "Conference Proceedings", "Hölbling, D., Dabiri, Z., Tsai, T.-T., Prasicek, G., Tsui, C. Y., Schäffer, L., Argentin, A., \\textbf{Abad, L.} (2019). Mapping the Evolution of the Butangbunasi Landslide, Taiwan, using Landsat Time Series. In 27th IUGG General Assembly. Montreal, Canada.",
+  "Quantifying Bicycle Network Connectivity in Lisbon Using Open Data", "Information, MDPI", "11, 2018", "Journal Article", "\\textbf{Abad, L}., van der Meer, L. (2018). Quantifying Bicycle Network Connectivity in Lisbon Using Open Data. Information, 9(11), 14. https://doi.org/10.3390/info9110287",
+  # "Exploratory analysis of volunteer cyclists behavior through spatio-temporal patterns mining in  Cuenca, Ecuador", "Maskana", "06, 2018", "Journal Article", "Abad, L., & Orellana, D. (2018). Análisis exploratorio de comportamientos de ciclistas voluntarios mediante minería de patrones espacio-temporales en Cuenca, Ecuador. Maskana, 9(1), 141-151.",
+  # "Potential distribution of the Polylepis genus in the Paute river basin under a climate change scenario", "Revista de La Facultad de Ciencias Químicas","12, 2018", "Journal Article", "Mejía-Coronel, D., Tonón, M., & Abad, L. (2018). Distribución Potencial del Género Polylepis en la Cuenca del Río Paute bajo un Escenario de Cambio Climático. Revista de La Facultad de Ciencias Químicas., December(19), 21-37.",
+    # "Water quality and environmental variables in endangered amphibia habitats in Cuenca urban area", "Revista de La Facultad de Ciencias Químicas", "11, 2017", "Journal Article", "Abad, L., Mejía, D., León, P., Cárdenas, I., Pacheco, B., & Tonón, M. (2017). Calidad del Agua y Variables Ambientales en Hábitats para Anfibios Amenazados en la Zona Urbana de Cuenca. Revista de La Facultad de Ciencias Químicas. Universidad de Cuenca.",
+  "Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city", "XVI Conferencia de Sistemas de Información Geográfica","09, 2017","Conference Proceedings","\\textbf{Abad, L.}, Mejía-Coronel, D. (2017). Estimación De La Concentración De Material Particulado Menor a 10 Micras a Través De Sensores Remotos En El Área Urbana De La Ciudad De Cuenca. In XVI Conferencia de Sistemas de Información Geográfica (pp. 381-390). Cuenca, Ecuador: Universidad del Azuay."
+) %>% 
+  detailed_entries(with = name, what = journal, when = date, where = type, why = bib, .protect=FALSE)
+```
+
+\faIcon{university} Education
+==================================
+
+<!-- \protect\faIcon{university} -->
+```{r education}
+tribble(
+  ~ study, ~ university, ~ loc, ~ dates, ~ details,
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, Germany", "2018 - 2019", "S2 2018: Advanced GIS Methods in Digital Cartography",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, Germany", "2018 - 2019", "S2 2018: Advanced Research Methods and Skills",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, Germany", "2018 - 2019", "S2 2018: Geospatial Technologies: Transferring Data to Knowledge",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, Germany", "2018 - 2019", "S2 2018: Reference Systems for Geographic Information",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, Germany", "2018 - 2019", "S2 2018: Spatial Data Science with R",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, Germany", "2018 - 2019", "S2 2018: Unmanned Aerial Systems",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, Germany", "2018 - 2019", "S2 2018: Project Management",
+  "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, DE", "2018 - 2019", "S2 2018: covering Cartography, Reference Systems, Spatial Data Science with R, Unmanned Aerial Systems",
+  "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, DE", "2018 - 2019", "S3 2018: Masters Thesis: Validating a bike network analysis score based on open data as a connectivity measure of urban cycling infrastructure adapted for European cities. Supervised by Prof. Dr. Edzer Pebesma.",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, Germany", "2018 - 2019", "More info: mastergeotech.info",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa", "Lisbon, Portugal", "2017 - 2019", "S1 2017: Geospatial Data Mining",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa", "Lisbon, Portugal", "2017 - 2019", "S1 2017: Geostatistics",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa", "Lisbon, Portugal", "2017 - 2019", "S1 2017: Remote Sensing",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa", "Lisbon, Portugal", "2017 - 2019", "S1 2017: Geographic Information Science",
+  # "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa", "Lisbon, Portugal", "2017 - 2019", "S1 2017: Group Project Seminar (covering Python and PostGIS)",
+    "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa", "Lisbon, PT", "2017 - 2019", "S1, 2017: covering Geospatial Data Mining, Geostatistics, Remote Sensing, Geographic Information Science, Python programming.",
+  "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa", "Lisbon, PT", "2017 - 2019", "More info: mastergeotech.info",
+  # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S3 2013: Biology and Environment",
+  # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S6 2014: Cartography and GIS",
+  # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S6 2014: Hydrology and Watershed Management",
+  # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S6 2014: General Ecology",
+  # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S7 2014: Remote Sensing",
+  # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S7 2014: Applied Ecology",
+  # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S9 2015: Territorial Planning",
+  # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S9 2015: Meteorology and Climatology",
+  # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S9 2015: Environmental Studies",
+  # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S10 2016: Natural Resources Management",
+  # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "Among others (the curriculum includes 66 subjects during 10 semesters)",
+  "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Covering Cartography, Remote Sensing, Ecology, Hydrology, Meteorology and Climatology, Environmental Studies, Natural Resources Management, among 66 subjects during 10 semesters.",
+  "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Bachelor Thesis: Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city.",
+  "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "More info: ucuenca.edu.ec",
+  "2nd International Biodiversity Summer School: The Diversity of Ecosystems, Genes and Species", "Universität Osnabrück", "Osnabrück, DE", "2015", "More info: uni-osnabrueck.de"
+) %>% 
+  detailed_entries(study, dates, university, loc, details, .protect=FALSE)
+```
+
+\pagebreak
+
+\faIcon{brain} Personal Skills
+================================
+
+&nbsp;
+
+\faIcon{cogs} Technical skills
+---------------------------------
+<!-- \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}} -->
+
+\par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{0.65pt}
+
+```{r, fig.width=3, fig.height=1.3, fig.align='center', fig.showtext=T}
+code <- data.frame(
+  a = c(
+    1, 1, 1, 1,
+    2, 2, 2, 2,
+    3, 3, 3, 3,
+    4, 4, 4, 4,
+    5, 5, 5, 5
+  ),
+  b = c(
+    0.5, 1.0, 1.5, 2.0, 
+    0.5, 1.0, 1.5, 2.0,
+    0.5, 1.0, 1.5, 2.0,
+    0.5, 1.0, 1.5, 2.0,
+    0.5, 1.0, 1.5, 2.0
+  ),
+  c = c(
+    T, T, T, T,
+    T, T, T, T,
+    F, T, T, T, 
+    F, F, T, T, 
+    F, F, F, T
+  )
+) %>% 
+ggplot(aes(a, b)) + 
+  geom_point(shape = 19, aes(color = c, size = c), show.legend = F) +
+  scale_y_continuous(
+    breaks = c(0.5, 1.0, 1.5, 2.0),
+    labels = c('Python', 'TeX','SQL','R')
+  ) +
+  scale_color_manual(values = c('grey70','#009ACD')) + 
+  scale_size_manual(values = c(3,4)) +
+  annotate('text', label = 'Coding Languages', x = 2.7, y = 2.5, size = 3.5, color = 'grey70') +
+  expand_limits(y = c(0.3,2.5), x = c(-0.7,6)) +
+  theme(
+    panel.background = element_blank(),
+    panel.border = element_blank(),
+    axis.title = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks = element_blank(),
+    # axis.ticks.length = unit(0.85, "cm"),
+    axis.text.y = element_text(vjust = 0.5, size = 8, margin = margin(r = 20))
+  )
+
+code
+#grid.arrange(code, soft1, ncol=2)
+```
+
+```{r, fig.width=3, fig.height=1.7, fig.align='center', fig.showtext=T}
+soft1 <- data.frame(
+  a = c(
+    1, 1, 1, 1, 1, 1,
+    2, 2, 2, 2, 2, 2,
+    3, 3, 3, 3, 3, 3,
+    4, 4, 4, 4, 4, 4,
+    5, 5, 5, 5, 5, 5
+  ),
+  b = c(
+    0.4, 0.8, 1.2, 1.6, 2, 2.4, 
+    0.4, 0.8, 1.2, 1.6, 2, 2.4,
+    0.4, 0.8, 1.2, 1.6, 2, 2.4,
+    0.4, 0.8, 1.2, 1.6, 2, 2.4,
+    0.4, 0.8, 1.2, 1.6, 2, 2.4
+  ),
+  c = c(
+    T, T, T, T, T, T,
+    T, T, T, T, T, T,
+    F, T, T, T, T, T, 
+    F, F, F, T, T, T, 
+    F, F, F, F, T, T
+  )
+) %>% 
+ggplot(aes(a, b)) + 
+  geom_point(shape = 19, aes(color = c, size = c), show.legend = F) +
+  scale_y_continuous(
+    breaks = c(0.4, 0.8, 1.2, 1.6, 2, 2.4),
+    labels = c('ENVI', 'WebGL', 'eCognition', 'Earth Engine', 'ArcGIS','QGIS')
+  ) +
+  scale_color_manual(values = c('grey70','#009ACD')) + 
+  scale_size_manual(values = c(3,4)) +
+  annotate('text', label = 'Software', x = 2, y = 3, size = 3.5, color = 'grey70') +
+  expand_limits(y = c(0.2,2.5), x = c(0,6)) +
+  scale_x_continuous(minor_breaks=NULL) +
+  theme(
+    panel.background = element_blank(),
+    panel.border = element_blank(),
+    axis.title = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks = element_blank(),
+    # axis.ticks.length = unit(0.85, "cm"),
+    axis.text.y = element_text(vjust = 0.5, size = 8, margin = margin(r = 20))
+  )
+
+soft1
+```
+
+<!-- &nbsp; -->
+<!-- \pagebreak -->
+
+\faIcon{language} Languages
+-------------------------------
+
+```{r langforeign}
+data.frame(
+  Skill = c("Reading", "Writing", "Listening","Speaking"),
+  Spanish = cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'),
+  English = cell_spec(c("C2","C1","C2","C2"), 'latex', color = '#009acd'),
+  French = cell_spec(c("B2","B2","B2","B2"), 'latex', color = '#4cb8dc'),
+  Portuguese = cell_spec(c("B1","B1","B1","B1"), 'latex', color = '#4cb8dc'),
+  German = cell_spec(c("A2","A1","A2","A2"), 'latex', color = '#7fcce6'),
+  Dutch = cell_spec(c("A1","A1","A1","A1"), 'latex', color = '#7fcce6')
+) %>%
+  # as_huxtable(add_colnames = T)
+  kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
+  kable_styling(full_width = T, font_size = 9, latex_options = 'striped') %>%
+  footnote(
+    footnote_as_chunk = T,
+    general_title = " ",
+    general = "\\\\tiny Common European Framework of Reference for Languages: A1/A2: Basic User. B1/B2: Independent User. C1/C2: Proficient User",
+    escape = F
+  ) %>%
+  add_header_above(' ',line = F) %>%
+  # row_spec(-1, extra_latex_after = "\\arrayrulecolor{white}\\hline") %>%
+  row_spec(0, extra_latex_after = "\\arrayrulecolor{white}\\hline")
+```
+
+\faIcon{medal} Distinctions
+===============================
+
+```{r dist}
+tribble(
+  ~ area, ~ org, ~ date,
+  "Benigno Malo Prize - University Honors Award", "Universidad de Cuenca", "2018",
+  "AGILE 2018 conference - travel grant", "AGILE \\& ESRI", "2018",
+  "Erasmus Mundus Scholarship", "European Commission", "2017",
+  "Best Scientific Poster - 2nd International Summer School \\newline 
+``The Biodiversity of Genes, Species and Ecosystems''", "Universität Osnabrück","2015",
+  "Vanguardia Honors Program", "Universidad de Cuenca", "2014 - 2016"
+) %>% 
+  brief_entries(what = area, when = date, with = org, .protect = F)
+```
+
+```{r extrainfo}
+# &nbsp;
+# 
+# 
+# \faIcon{user} Extra info
+# ==========================================
+# 
+# \paragraphstyle{Birth Date: 05-01-1994 \\ Nationality: Ecuadorian}
+# &nbsp;
+```
+
+```{r}
+# \faIcon{comment} Referees
+# =============================
+# 
+# \footnotesize
+# \begin{multicols}{3}
+# \begin{center}
+# \textbf{Prof. Dr. Edzer Pebesma} \newline
+# \faIcon{phone} +49 251 83-33081 \newline
+# \faIcon{at} edzer.pebesma@uni-muenster.de \newline
+# \faIcon{envelope} Institute for Geoinformatics, \newline
+# Heisenbergstraße 2, 48149, \newline
+# Münster, Germany
+# 
+# \textbf{Prof. Dr. Marco Painho} \newline
+# \faIcon{phone} +351 213 871 573 \newline
+# \faIcon{at} painho@novaims.unl.pt \newline
+# \faIcon{envelope} NOVA Information Management School\newline
+# Campus de Campolide, 1070-312\newline
+# Lisbon, Portugal
+# 
+# \textbf{Prof. Dr. Daniel Orellana} \newline
+# \faIcon{phone} (593 7) 4051000 Ext. 2112 \newline
+# \faIcon{at} daniel.orellana@ucuenca.edu.ec \newline
+# \faIcon{envelope} Grupo de Investigación LlactaLAB \newline
+# Av. 12 de Abril y Agustín Cueva, 010203 \newline
+# Cuenca, Ecuador
+# \end{center}
+# \end{multicols}
+# 
+# \normalsize
+```
