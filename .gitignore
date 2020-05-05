@@ -1,6 +1,7 @@
 .httr-oauth
 .Renviron
-vitae-fork
 .Rhistory
 .Rproj.user
-CV/archive
+archive/
+Motivation_letters/
+fonts/
