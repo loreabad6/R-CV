@@ -90,7 +90,7 @@ ggplot(data = world) +
   geom_sf(
     data = routes, color = '#009ACD', size = 0.5, alpha = 0.5, linetype = 'dotted'
   ) +
-  coord_sf(crs = 54030, xlim = c(-10000000, 4500000), ylim = c(-390000,6100000)) +
+  coord_sf(crs = '+proj=robin', xlim = c(-10000000, 4500000), ylim = c(-390000,6100000)) +
   theme_minimal() +
   theme(
     panel.grid = element_line(color = 'transparent'),
@@ -99,12 +99,17 @@ ggplot(data = world) +
   )
 ```
 
- \faIcon{briefcase} Professional Experience
+ 
+\faIcon{briefcase} Professional Experience
 ============================================
 
-```{r experience}
-exp <- rorcid::orcid_employments("0000-0003-0554-734X")
-exp$`0000-0003-0554-734X`$`employment-summary` %>%
+```{r experience, eval = T}
+exp <- rorcid::orcid_employments("0000-0003-0554-734X") %>%
+  purrr::map(., purrr::pluck, "affiliation-group", "summaries") %>% 
+  purrr::flatten_dfr()
+names(exp) <- stringr::str_remove(string = names(exp), pattern = "employment-summary.")
+
+exp %>%
   mutate(description = c(
     'Researcher for the MORPH, RiCoLa, STEC, citizenMORPH, MontEO projects in the Landslide division of the OBIA group.',
     'Spatio-temporal data analyst for the project: "Study of Cyclists and Pedestrian Mobility Patterns in Cuenca for a Sustainable Mobility".',
@@ -128,23 +133,26 @@ exp$`0000-0003-0554-734X`$`employment-summary` %>%
     # .protect = FALSE
   )
 ```
-
+ 
 \faIcon*{file} Selected Publications
 ===========================
 
 ```{r pubs}
 tribble(
   ~ name, ~ journal, ~ date, ~type, ~ bib,
+  "Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series -a case study after the 2016 Kaikōura Earthquake in New Zealand","EGU General Assembly 2020","03, 2020","Conference Proceedings","\\textbf{Abad, L.}, Hölbling, D., Spiekermann, R., Dabiri, Z., Prasicek, G., Argentin, A.-L. (2020). Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series -a case study after the 2016 Kaikōura Earthquake in New Zealand. EGU General Assembly 2020. https://doi.org/10.5194/egusphere-egu2020-572",
+  "Observation and Reporting of Landforms and Landscape Dynamics by Citizens","EGU General Assembly 2020","03, 2020","Conference Proceedings","Hölbling, D., Hennig, S., \\textbf{Abad, L.}, Ecke, S., Tiede, D. (2020). Observation and Reporting of Landforms and Landscape Dynamics by Citizens. EGU General Assembly 2020. https://doi.org/10.5194/egusphere-egu2020-13593",
+  "Technological solutions for contributory citizen science: experiences from citizenMorph","Proceedings of Science","06, 2019","Journal Article", "Hennig, S., \\textbf{Abad, L.}, Hölbling, D. (2019). Technological solutions for contributory citizen science: experiences from citizenMorph. Proceedings of Science, June 2019, 26–28. https://pos.sissa.it/366/005/pdf",
   "Mapping and Analyzing the Evolution of the Butangbunasi Landslide Using Landsat Time Series with Respect to Heavy Rainfall Events during Typhoons", "Applied Sciences, MDPI", "01, 2020", "Journal Article","Hölbling, D., \\textbf{Abad, L.}, Dabiri, Z., Prasicek, G., Tsai, T.-T., Argentin, A.-L. Mapping and Analyzing the Evolution of the Butangbunasi Landslide Using Landsat Time Series with Respect to Heavy Rainfall Events during Typhoons. Appl. Sci. 2020, 10, 630. https://doi.org/10.3390/app10020630",
   "An Object-Based Approach for Monitoring the Evolution of Landslide-dammed Lakes and Detecting Triggering Landslides in Taiwan", "ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences", "09, 2019", "Journal Article", "Dabiri, Z., Hölbling, D., \\textbf{Abad, L.}, Prasicek, G., Argentin, A.-L., Tsai, T.-T. (2019). An Object-Based Approach for Monitoring the Evolution of Landslide-dammed Lakes and Detecting Triggering Landslides in Taiwan. ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XLII-3/W8, 103–108. https://doi.org/10.5194/isprs-archives-XLII-3-W8-103-2019",
   "Assessment of Landslide-Induced Morphology Changes using an Object-Based Image Analysis Approach: A Case Study of Hitardalur, Iceland", "ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences", "09, 2019", "Journal Article", "Dabiri, Z., Hölbling, D., \\textbf{Abad, L.}, Tiede, D. (2019). Assessment of Landslide-Induced Morphology Changes using an Object-Based Image Analysis Approach: A Case Study of Hitardalur, Iceland. ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XLII-3/W8, 109–114. https://doi.org/10.5194/isprs-archives-XLII-3-W8-109-2019",
-  "Distinct mechanisms of landslides in moraines associated with the post-LIA glacier thinning: observations from the Kinzl glacier, Huascarán, Peru","17th International Symposium on Geo-disaster Reduction","08, 2019", "Conference Proceedings","Emmer, A., \\textbf{Abad, L.}, Hölbling, D., Klimeš, J., Štěpánek, P., Zahradníček, P. (2019). Distinct mechanisms of landslides in moraines associated with the post-LIA glacier thinning: observations from the Kinzl glacier, Huascarán, Peru. In 17th International Symposium on Geo-disaster Reduction. Issyk Kul.",
-  "Mapping the Evolution of the Butangbunasi Landslide, Taiwan, using Landsat Time Series", "27th International Union of Geodesy and Geophysics General Assembly", "06, 2019", "Conference Proceedings", "Hölbling, D., Dabiri, Z., Tsai, T.-T., Prasicek, G., Tsui, C. Y., Schäffer, L., Argentin, A., \\textbf{Abad, L.} (2019). Mapping the Evolution of the Butangbunasi Landslide, Taiwan, using Landsat Time Series. In 27th IUGG General Assembly. Montreal, Canada.",
+  # "Distinct mechanisms of landslides in moraines associated with the post-LIA glacier thinning: observations from the Kinzl glacier, Huascarán, Peru","17th International Symposium on Geo-disaster Reduction","08, 2019", "Conference Proceedings","Emmer, A., \\textbf{Abad, L.}, Hölbling, D., Klimeš, J., Štěpánek, P., Zahradníček, P. (2019). Distinct mechanisms of landslides in moraines associated with the post-LIA glacier thinning: observations from the Kinzl glacier, Huascarán, Peru. In 17th International Symposium on Geo-disaster Reduction. Issyk Kul.",
+  # "Mapping the Evolution of the Butangbunasi Landslide, Taiwan, using Landsat Time Series", "27th International Union of Geodesy and Geophysics General Assembly", "06, 2019", "Conference Proceedings", "Hölbling, D., Dabiri, Z., Tsai, T.-T., Prasicek, G., Tsui, C. Y., Schäffer, L., Argentin, A., \\textbf{Abad, L.} (2019). Mapping the Evolution of the Butangbunasi Landslide, Taiwan, using Landsat Time Series. In 27th IUGG General Assembly. Montreal, Canada.",
   "Quantifying Bicycle Network Connectivity in Lisbon Using Open Data", "Information, MDPI", "11, 2018", "Journal Article", "\\textbf{Abad, L}., van der Meer, L. (2018). Quantifying Bicycle Network Connectivity in Lisbon Using Open Data. Information, 9(11), 14. https://doi.org/10.3390/info9110287",
-  # "Exploratory analysis of volunteer cyclists behavior through spatio-temporal patterns mining in  Cuenca, Ecuador", "Maskana", "06, 2018", "Journal Article", "Abad, L., & Orellana, D. (2018). Análisis exploratorio de comportamientos de ciclistas voluntarios mediante minería de patrones espacio-temporales en Cuenca, Ecuador. Maskana, 9(1), 141-151.",
-  # "Potential distribution of the Polylepis genus in the Paute river basin under a climate change scenario", "Revista de La Facultad de Ciencias Químicas","12, 2018", "Journal Article", "Mejía-Coronel, D., Tonón, M., & Abad, L. (2018). Distribución Potencial del Género Polylepis en la Cuenca del Río Paute bajo un Escenario de Cambio Climático. Revista de La Facultad de Ciencias Químicas., December(19), 21-37.",
-    # "Water quality and environmental variables in endangered amphibia habitats in Cuenca urban area", "Revista de La Facultad de Ciencias Químicas", "11, 2017", "Journal Article", "Abad, L., Mejía, D., León, P., Cárdenas, I., Pacheco, B., & Tonón, M. (2017). Calidad del Agua y Variables Ambientales en Hábitats para Anfibios Amenazados en la Zona Urbana de Cuenca. Revista de La Facultad de Ciencias Químicas. Universidad de Cuenca.",
-  "Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city", "XVI Conferencia de Sistemas de Información Geográfica","09, 2017","Conference Proceedings","\\textbf{Abad, L.}, Mejía-Coronel, D. (2017). Estimación De La Concentración De Material Particulado Menor a 10 Micras a Través De Sensores Remotos En El Área Urbana De La Ciudad De Cuenca. In XVI Conferencia de Sistemas de Información Geográfica (pp. 381-390). Cuenca, Ecuador: Universidad del Azuay."
+  "Exploratory analysis of volunteer cyclists behavior through spatio-temporal patterns mining in  Cuenca, Ecuador", "Maskana", "06, 2018", "Journal Article", "Abad, L., Orellana, D. (2018). Análisis exploratorio de comportamientos de ciclistas voluntarios mediante minería de patrones espacio-temporales en Cuenca, Ecuador. Maskana, 9(1), 141-151.",
+  # "Potential distribution of the Polylepis genus in the Paute river basin under a climate change scenario", "Revista de La Facultad de Ciencias Químicas","12, 2018", "Journal Article", "Mejía-Coronel, D., Tonón, M., Abad, L. (2018). Distribución Potencial del Género Polylepis en la Cuenca del Río Paute bajo un Escenario de Cambio Climático. Revista de La Facultad de Ciencias Químicas., December(19), 21-37.",
+    # "Water quality and environmental variables in endangered amphibia habitats in Cuenca urban area", "Revista de La Facultad de Ciencias Químicas", "11, 2017", "Journal Article", "Abad, L., Mejía, D., León, P., Cárdenas, I., Pacheco, B., Tonón, M. (2017). Calidad del Agua y Variables Ambientales en Hábitats para Anfibios Amenazados en la Zona Urbana de Cuenca. Revista de La Facultad de Ciencias Químicas. Universidad de Cuenca.",
+  # "Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city", "XVI Conferencia de Sistemas de Información Geográfica","09, 2017","Conference Proceedings","\\textbf{Abad, L.}, Mejía-Coronel, D. (2017). Estimación De La Concentración De Material Particulado Menor a 10 Micras a Través De Sensores Remotos En El Área Urbana De La Ciudad De Cuenca. In XVI Conferencia de Sistemas de Información Geográfica (pp. 381-390). Cuenca, Ecuador: Universidad del Azuay."
 ) %>% 
   detailed_entries(with = name, what = journal, when = date, where = type, why = bib, .protect=FALSE)
 ```
@@ -164,7 +172,7 @@ tribble(
   # "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, Germany", "2018 - 2019", "S2 2018: Unmanned Aerial Systems",
   # "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, Germany", "2018 - 2019", "S2 2018: Project Management",
   "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, DE", "2018 - 2019", "S2 2018: covering Cartography, Reference Systems, Spatial Data Science with R, Unmanned Aerial Systems",
-  "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, DE", "2018 - 2019", "S3 2018: Masters Thesis: Validating a bike network analysis score based on open data as a connectivity measure of urban cycling infrastructure adapted for European cities. Supervised by Prof. Dr. Edzer Pebesma.",
+  "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, DE", "2018 - 2019", "S3 2018: Masters Thesis: Validating a bike network analysis score based on open data as a connectivity measure of urban cycling infrastructure adapted for European cities. Supervised by Prof. Dr. Edzer Pebesma. URL: http://hdl.handle.net/10362/67511",
   # "Erasmus Mundus Msc. Geospatial Technologies", "Westfälische Wilhelms-Universität Münster","Münster, Germany", "2018 - 2019", "More info: mastergeotech.info",
   # "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa", "Lisbon, Portugal", "2017 - 2019", "S1 2017: Geospatial Data Mining",
   # "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa", "Lisbon, Portugal", "2017 - 2019", "S1 2017: Geostatistics",
@@ -185,9 +193,9 @@ tribble(
   # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S10 2016: Natural Resources Management",
   # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "Among others (the curriculum includes 66 subjects during 10 semesters)",
   "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Covering Cartography, Remote Sensing, Ecology, Hydrology, Meteorology and Climatology, Environmental Studies, Natural Resources Management, among 66 subjects during 10 semesters.",
-  "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Bachelor Thesis: Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city.",
-  "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "More info: ucuenca.edu.ec",
-  "2nd International Biodiversity Summer School: The Diversity of Ecosystems, Genes and Species", "Universität Osnabrück", "Osnabrück, DE", "2015", "More info: uni-osnabrueck.de"
+  "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Bachelor Thesis (SPA): Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city. Supervised by Danilo Mejía Coronel. URL: http://dspace.ucuenca.edu.ec/handle/123456789/25484",
+  "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "More info: ucuenca.edu.ec"
+  # "2nd International Biodiversity Summer School: The Diversity of Ecosystems, Genes and Species", "Universität Osnabrück", "Osnabrück, DE", "2015", "More info: uni-osnabrueck.de"
 ) %>% 
   detailed_entries(study, dates, university, loc, details, .protect=FALSE)
 ```
@@ -198,11 +206,11 @@ tribble(
 ================================
 
 &nbsp;
-
+<!--
 \faIcon{cogs} Technical skills
 ---------------------------------
 <!-- \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}} -->
-
+<!--
 \par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{0.65pt}
 
 ```{r, fig.width=3, fig.height=1.3, fig.align='center', fig.showtext=T}
@@ -238,7 +246,8 @@ ggplot(aes(a, b)) +
   scale_color_manual(values = c('grey70','#009ACD')) + 
   scale_size_manual(values = c(3,4)) +
   annotate('text', label = 'Coding Languages', x = 2.7, y = 2.5, size = 3.5, color = 'grey70') +
-  expand_limits(y = c(0.3,2.5), x = c(-0.7,6)) +
+  expand_limits(y = c(0.3,2.5), x = c(0,6)) +
+  # expand_scale(mult = c(0,0), add = c(0,0)) +
   theme(
     panel.background = element_blank(),
     panel.border = element_blank(),
@@ -246,11 +255,10 @@ ggplot(aes(a, b)) +
     axis.text.x = element_blank(),
     axis.ticks = element_blank(),
     # axis.ticks.length = unit(0.85, "cm"),
-    axis.text.y = element_text(vjust = 0.5, size = 8, margin = margin(r = 20))
+    axis.text.y = element_text(vjust = 0.5, size = 8, margin = margin(r = 0))
   )
 
-code
-#grid.arrange(code, soft1, ncol=2)
+# code
 ```
 
 ```{r, fig.width=3, fig.height=1.7, fig.align='center', fig.showtext=T}
@@ -287,6 +295,7 @@ ggplot(aes(a, b)) +
   scale_size_manual(values = c(3,4)) +
   annotate('text', label = 'Software', x = 2, y = 3, size = 3.5, color = 'grey70') +
   expand_limits(y = c(0.2,2.5), x = c(0,6)) +
+  # expand_scale(mult = c(0,0), add = c(0,0)) +
   scale_x_continuous(minor_breaks=NULL) +
   theme(
     panel.background = element_blank(),
@@ -295,11 +304,16 @@ ggplot(aes(a, b)) +
     axis.text.x = element_blank(),
     axis.ticks = element_blank(),
     # axis.ticks.length = unit(0.85, "cm"),
-    axis.text.y = element_text(vjust = 0.5, size = 8, margin = margin(r = 20))
+    axis.text.y = element_text(vjust = 0.5, size = 8, margin = margin(r = 0))
   )
 
-soft1
+# soft1
 ```
+
+```{r, fig.width=6, fig.height=1.7, fig.align='center', fig.showtext=T}
+#grid.arrange(code, soft1, ncol=2)
+```
+-->
 
 <!-- &nbsp; -->
 <!-- \pagebreak -->
