@@ -8,6 +8,9 @@
 % Claud D. Park <posquit0.bj@gmail.com>
 % http://www.posquit0.com
 %
+% Modified by:
+% Lorena Abad <lore.abad6@gmail.com>
+%
 % Notes:
 % 1) This class file defines the structure and layout of the template file (cv.tex, resume.tex).
 % 2) It has been written in such a way that under most circumstances you
@@ -75,6 +78,7 @@
 % Needed to use icons from font-awesome
 % (https://github.com/posquit0/latex-fontawesome)
 \defaultfontfeatures{Extension = .otf}
+% Add fontawesome5 package 
 \RequirePackage{fontawesome5}
 \RequirePackage[default,opentype]{sourcesanspro}
 % Needed for the photo ID
@@ -153,9 +157,9 @@
 \setbool{acvSectionColorHighlight}{true}
 
 % Awesome section color
-%\def\@sectioncolor#1#2#3{%
-%  \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{}%
-%}
+\def\@sectioncolor#1#2#3{%
+ \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{}%
+}
 
 
 %-------------------------------------------------------------------------------
@@ -286,6 +290,18 @@
 % Usage: \homepage{<url>}
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
+% Defines writer's googlescholar account (optional)
+% Usage: \googlescholar{<googlescholar-user-id>}
+\newcommand*{\googlescholar}[1]{\def\@googlescholar{#1}}
+
+% Defines writer's researchgate account (optional)
+% Usage: \researchgate{<researchgate-name>}
+\newcommand*{\researchgate}[1]{\def\@researchgate{#1}}
+
+% Defines writer's orcid (optional)
+% Usage: \orcid{<orcid>}
+\newcommand*{\orcid}[1]{\def\@orcid{#1}}
+
 % Defines writer's github (optional)
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\def\@github{#1}}
@@ -372,6 +388,7 @@
 \newcommand{\acvHeaderAfterPositionSkip}{.4mm}
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
+\newcommand{\acvHeaderSocialSkip}{-.5mm}
 \newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 \newcommand{\acvHeaderAfterSocialSkip}{6mm}
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
@@ -449,6 +466,8 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \faEnvelope\acvHeaderIconSep\@email%
         }%
+         \\[\acvHeaderSocialSkip]%
+         \setbool{isstart}{true}%
       \ifthenelse{\isundefined{\@homepage}}%
         {}%
         {%
@@ -502,6 +521,24 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
+        }%
+      \ifthenelse{\isundefined{\@orcid}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://orcid.org/\@orcid}{\faIcon{orcid}\acvHeaderIconSep\@orcid}%
+        }%
+      % \ifthenelse{\isundefined{\@googlescholar}}%
+      %   {}%
+      %   {%
+      %     \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+      %     \href{https://scholar.google.com/citations?user=\@googlescholar}{\aiGoogleScholarSquare\acvHeaderIconSep\@googlescholar}%
+      %   }%
+      \ifthenelse{\isundefined{\@researchgate}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://www.researchgate.net/profile/\@researchgate}{\faResearchgate\acvHeaderIconSep\@researchgate}%
         }%
       \ifthenelse{\isundefined{\@extrainfo}}%
         {}%
