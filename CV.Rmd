@@ -186,7 +186,7 @@ tribble(
   # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "S10 2016: Natural Resources Management",
   # "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, Ecuador", "2011 - 2016", "Among others (the curriculum includes 66 subjects during 10 semesters)",
   "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Covering Cartography, Remote Sensing, Ecology, Hydrology, Meteorology and Climatology, Environmental Studies, Natural Resources Management, among 66 subjects during 10 semesters.",
-  "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Bachelor Thesis (SPA): Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city. Supervised by Danilo Mejía Coronel. URL: \\textit{http://dspace.ucuenca.edu.ec/handle/123456789/25484}",
+  "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Bachelor Thesis (in spanish): Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city. Supervised by Danilo Mejía Coronel. URL: \\textit{http://dspace.ucuenca.edu.ec/handle/123456789/25484}",
   "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "More info: \\textit{ucuenca.edu.ec}"
   # "2nd International Biodiversity Summer School: The Diversity of Ecosystems, Genes and Species", "Universität Osnabrück", "Osnabrück, DE", "2015", "More info: uni-osnabrueck.de"
 ) %>% 
