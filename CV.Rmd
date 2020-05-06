@@ -195,8 +195,15 @@ tribble(
 
 \pagebreak
 
-\faIcon{laptop-code} Current Projects
+\faIcon{lightbulb} Current Projects
 =====================================
+
+&nbsp;
+
+\faIcon{satellite} Research projects
+---------------------------------
+\par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt}
+
 ```{r proj}
 tribble(
   ~ name, ~ acronym, ~ date, ~study_area,
@@ -204,11 +211,25 @@ tribble(
   " The impact of mass movements on alpine trails and huts assessed by EO data", "\\href{http://monteo.zgis.at/}{MontEO}", "2020 - 2021", "AT", 
   "Detection and Analysis of Landslide-induced River Course Changes and Lake Formation", "\\href{http://landslides-and-rivers.sbg.ac.at/}{RiCoLa}", "2017 - 2020", "AT, NZ, TW", 
   "Observation and Reporting of Landscape Dynamics by Citizens", "\\href{http://citizenmorph.sbg.ac.at/}{citizenMorph}", "2018 - 2020", "AT, DE, IS", 
-  "Mapping, Monitoring and Modelling the Spatio-Temporal Dynamics of Land Surface Morphology", "\\href{http://morph.sbg.ac.at/}{MORPH}", "2016 - 2020", "IS",
-  "Tidy Geospatial Networks in R -- R Package", "\\href{https://luukvdmeer.github.io/sfnetworks/}{sfnetworks}", "2019 - Ongoing", ""
+  "Mapping, Monitoring and Modelling the Spatio-Temporal Dynamics of Land Surface Morphology", "\\href{http://morph.sbg.ac.at/}{MORPH}", "2016 - 2020", "IS"
 ) %>% 
   detailed_entries(with = acronym, what = name, when = date, where = study_area, .protect=FALSE)  
 ```
+
+&nbsp;
+
+\faIcon{laptop-code} Software development
+----------------------------------
+\par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt}
+
+```{r dev}
+tribble(
+  ~ name, ~ acronym, ~ type,
+  "Tidy Geospatial Networks in R", "\\href{https://luukvdmeer.github.io/sfnetworks/}{sfnetworks}", "R Package"
+) %>% 
+  detailed_entries(with = acronym, what = name, where = type, .protect=FALSE)  
+```
+
 
 \faIcon{brain} Skills
 ================================
@@ -257,7 +278,7 @@ data.frame(
   ) %>%
   column_spec(column = 1:6, width = '2.4cm') %>% 
   add_header_above(' ',line = F) %>%
-  row_spec(0, extra_latex_after = "\\arrayrulecolor{white}\\hline")
+  row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}\\hline")
 ```
 
 \faIcon{medal} Distinctions
