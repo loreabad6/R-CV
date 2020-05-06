@@ -195,17 +195,44 @@ tribble(
 
 \pagebreak
 
-\faIcon{brain} Personal Skills
+\faIcon{laptop-code} Current Projects
+=====================================
+```{r proj}
+tribble(
+  ~ name, ~ acronym, ~ date, ~study_area,
+  "Smarter Targeting of Erosion Control", "STEC", "2018 - 2023", "NZ", 
+  " The impact of mass movements on alpine trails and huts assessed by EO data", "\\href{http://monteo.zgis.at/}{MontEO}", "2020 - 2021", "AT", 
+  "Detection and Analysis of Landslide-induced River Course Changes and Lake Formation", "\\href{http://landslides-and-rivers.sbg.ac.at/}{RiCoLa}", "2017 - 2020", "AT, NZ, TW", 
+  "Observation and Reporting of Landscape Dynamics by Citizens", "\\href{http://citizenmorph.sbg.ac.at/}{citizenMorph}", "2018 - 2020", "AT, DE, IS", 
+  "Mapping, Monitoring and Modelling the Spatio-Temporal Dynamics of Land Surface Morphology", "\\href{http://morph.sbg.ac.at/}{MORPH}", "2016 - 2020", "IS",
+  "Tidy Geospatial Networks in R -- R Package", "\\href{https://luukvdmeer.github.io/sfnetworks/}{sfnetworks}", "2019 - Ongoing", ""
+) %>% 
+  detailed_entries(with = acronym, what = name, when = date, where = study_area, .protect=FALSE)  
+```
+
+\faIcon{brain} Skills
 ================================
 
 &nbsp;
-<!--
+
 \faIcon{cogs} Technical skills
 ---------------------------------
 <!-- \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}} -->
-<!--
-\par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{0.65pt}
--->
+
+\par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt}
+
+```{r tech}
+tribble(
+  ~ lang, ~ group,
+  "Coding Languages", "R -- SQL -- TeX -- Python",
+  "Software", "QGIS -- ArcGIS -- SAGA -- eCognition -- Microsoft Office -- GIMP -- Mendeley",
+  "Integrated Development Environment (IDE)", "RStudio -- Earth Engine Code Editor",
+  "Version Control", "GIT"
+) %>% 
+  detailed_entries(what = group, with = lang, .protect=FALSE)
+```
+
+&nbsp;
 
 \faIcon{language} Languages
 -------------------------------
