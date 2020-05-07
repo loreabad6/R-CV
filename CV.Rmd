@@ -247,13 +247,12 @@ tribble(
 
 ```{r tech}
 tribble(
-  ~ lang, ~ group,
-  "Coding Languages", "R -- SQL -- TeX -- Python",
-  "Software", "QGIS -- ArcGIS -- SAGA -- eCognition -- Microsoft Office -- GIMP -- Mendeley",
-  "Integrated Development Environment (IDE)", "RStudio -- Earth Engine Code Editor",
-  "Version Control", "GIT"
+   ~type, ~ software, 
+  "Coding Languages", "R -- SQL -- Python -- JavaScript",
+  "Software", "QGIS -- ArcGIS -- SAGA -- eCognition -- PostgreSQL -- PostGIS -- RStudio --  Earth Engine -- GIMP -- Mendeley",
+  "Other", "Git -- Markdown -- LaTex -- OpenStreetMap"
 ) %>% 
-  detailed_entries(what = group, with = lang, .protect=FALSE)
+  detailed_entries(what = software, where = type, .protect=FALSE)
 ```
 
 &nbsp;
