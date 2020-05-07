@@ -20,6 +20,7 @@ always_allow_html: yes
 header-includes:
   \usepackage{multicol}
   \usepackage{colortbl}
+  \arrayrulecolor{white}
   \usepackage{hhline}
   \definecolor{light-gray}{gray}{0.95}
 ---
@@ -195,14 +196,14 @@ tribble(
 
 \pagebreak
 
-\faIcon{lightbulb} Current Projects
+\faIcon{lightbulb} Projects
 =====================================
 
 &nbsp;
 
 \faIcon{satellite} Research projects
 ---------------------------------
-\par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt}
+<!-- \par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt} -->
 
 ```{r proj}
 tribble(
@@ -218,14 +219,16 @@ tribble(
 
 &nbsp;
 
-\faIcon{laptop-code} Software development
+\faIcon{laptop-code} Programming projects
 ----------------------------------
-\par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt}
+<!-- \par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt} -->
 
 ```{r dev}
 tribble(
   ~ name, ~ acronym, ~ type,
-  "Tidy Geospatial Networks in R", "\\href{https://luukvdmeer.github.io/sfnetworks/}{sfnetworks}", "R Package"
+  "Tidy Geospatial Networks in R", "\\href{https://luukvdmeer.github.io/sfnetworks/}{sfnetworks}", "R Package",
+  "Bicycle Network Analysis Score for UK and NL",
+  "\\href{https://github.com/loreabad6/masters-thesis-geotech}{BNA-EU}", "RMarkdown Reporting"
 ) %>% 
   detailed_entries(with = acronym, what = name, where = type, .protect=FALSE)  
 ```
@@ -240,7 +243,7 @@ tribble(
 ---------------------------------
 <!-- \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}} -->
 
-\par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt}
+<!-- \par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt} -->
 
 ```{r tech}
 tribble(
@@ -258,7 +261,7 @@ tribble(
 \faIcon{language} Languages
 -------------------------------
 
-```{r langforeign}
+```{r langforeign, results='markup'}
 data.frame(
   Skill = c("Reading", "Writing", "Listening","Speaking"),
   Spanish = cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'),
@@ -269,16 +272,16 @@ data.frame(
   Dutch = cell_spec(c("A1","A1","A1","A1"), 'latex', color = '#7fcce6')
 ) %>%
   kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
-  kable_styling(full_width = F, font_size = 9) %>% #, latex_options = 'striped') %>%
+  kable_styling(full_width = F, font_size = 9) %>% 
   footnote(
     footnote_as_chunk = T,
     general_title = " ",
     general = "\\\\tiny Common European Framework of Reference for Languages: A1/A2: Basic User. B1/B2: Independent User. C1/C2: Proficient User",
     escape = F
   ) %>%
-  column_spec(column = 1:6, width = '2.4cm') %>% 
-  add_header_above(' ',line = F) %>%
-  row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}\\hline")
+  column_spec(column = 1:6, width = '2.4cm') #%>% 
+  # add_header_above(' ', line = F) %>%
+  # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
 ```
 
 \faIcon{medal} Distinctions
