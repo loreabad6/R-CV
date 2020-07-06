@@ -210,7 +210,7 @@ tribble(
   "Distinct types of landslides in moraines associated with the post-LIA glacier thinning: Observations from the Kinzl Glacier, Huascarán, Peru", "Science of the Total Environment", "06, 2020", "Journal Article", "Emmer, A., Klimeš, J., Hölbling, D., \\textbf{Abad, L.}, Draebing, D., Skalák, P., Štěpánek, P., Zahradníček, P. (2020). Distinct types of landslides in moraines associated with the post-LIA glacier thinning: Observations from the Kinzl Glacier, Huascarán, Peru. Science of The Total Environment, 739, 139997. \\textit{https://doi.org/10.1016/j.scitotenv.2020.139997}",
   "Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series -a case study after the 2016 Kaikōura Earthquake in New Zealand","EGU General Assembly 2020","03, 2020","Conference Proceedings","\\textbf{Abad, L.}, Hölbling, D., Spiekermann, R., Dabiri, Z., Prasicek, G., Argentin, A.-L. (2020). Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series -a case study after the 2016 Kaikōura Earthquake in New Zealand. EGU General Assembly 2020. \\textit{https://doi.org/10.5194/egusphere-egu2020-572}",
   "Observation and Reporting of Landforms and Landscape Dynamics by Citizens","EGU General Assembly 2020","03, 2020","Conference Proceedings","Hölbling, D., Hennig, S., \\textbf{Abad, L.}, Ecke, S., Tiede, D. (2020). Observation and Reporting of Landforms and Landscape Dynamics by Citizens. EGU General Assembly 2020. \\textit{https://doi.org/10.5194/egusphere-egu2020-13593}",
-  "Assessing the impact of mass movements on alpine trails and huts using EO data.","EGU General Assembly 2020","03, 2020","Conference Proceedings","Albrecht, F., Hölbling, D., \\text{Abad, L.}, Dabiri, Z., Reischenböck, G., Hipp, T., Resch, H., Resch, G. (2020). Assessing the impact of mass movements on alpine trails and huts using EO data. EGU General Assembly 2020. \\textit{https://doi.org/10.5194/egusphere-egu2020-21325}",
+  "Assessing the impact of mass movements on alpine trails and huts using EO data.","EGU General Assembly 2020","03, 2020","Conference Proceedings","Albrecht, F., Hölbling, D., \\textbf{Abad, L.}, Dabiri, Z., Reischenböck, G., Hipp, T., Resch, H., Resch, G. (2020). Assessing the impact of mass movements on alpine trails and huts using EO data. EGU General Assembly 2020. \\textit{https://doi.org/10.5194/egusphere-egu2020-21325}",
   "Landslide dam susceptibility in the Austrian Alps inferred from modelled landslides , potential valley damming and lake formation.","EGU General Assembly 2020","03, 2020","Conference Proceedings","Argentin, A.-L., Prasicek, G., Robl, J., Hölbling, D., \\textbf{Abad, L.} (2020). Landslide dam susceptibility in the Austrian Alps inferred from modelled landslides , potential valley damming and lake formation. EGU General Assembly 2020. \\textit{https://doi.org/10.5194/egusphere-egu2020-8040}",
   "Mapping and Analyzing the Evolution of the Butangbunasi Landslide Using Landsat Time Series with Respect to Heavy Rainfall Events during Typhoons", "Applied Sciences, MDPI", "01, 2020", "Journal Article","Hölbling, D., \\textbf{Abad, L.}, Dabiri, Z., Prasicek, G., Tsai, T.-T., Argentin, A.-L. Mapping and Analyzing the Evolution of the Butangbunasi Landslide Using Landsat Time Series with Respect to Heavy Rainfall Events during Typhoons. Applied Sciences. 2020, 10, 630. \\textit{https://doi.org/10.3390/app10020630}",
   "An Object-Based Approach for Monitoring the Evolution of Landslide-dammed Lakes and Detecting Triggering Landslides in Taiwan", "ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences", "09, 2019", "Journal Article", "Dabiri, Z., Hölbling, D., \\textbf{Abad, L.}, Prasicek, G., Argentin, A.-L., Tsai, T.-T. (2019). An Object-Based Approach for Monitoring the Evolution of Landslide-dammed Lakes and Detecting Triggering Landslides in Taiwan. ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XLII-3/W8, 103–108. \\textit{https://doi.org/10.5194/isprs-archives-XLII-3-W8-103-2019}",
@@ -221,8 +221,8 @@ tribble(
   "Quantifying Bicycle Network Connectivity in Lisbon Using Open Data", "Information, MDPI", "11, 2018", "Journal Article", "\\textbf{Abad, L}., van der Meer, L. (2018). Quantifying Bicycle Network Connectivity in Lisbon Using Open Data. Information, 9(11), 14. \\textit{https://doi.org/10.3390/info9110287}",
   "Exploratory analysis of volunteer cyclists behavior through spatio-temporal patterns mining in  Cuenca, Ecuador", "Maskana", "06, 2018", "Journal Article", "\\textbf{Abad, L.}, Orellana, D. (2018). Análisis exploratorio de comportamientos de ciclistas voluntarios mediante minería de patrones espacio-temporales en Cuenca, Ecuador. Maskana, 9(1), 141-151.",
   "Exploring space-time patterns of volunteered cycling data in an intermediate city", "Memorias V Congreso REDU", "10, 2017", "Conference Proceedings", "\\textbf{Abad, L.}, Orellana, D. (2017). Exploring space-time patterns of volunteered cycling data in an intermediate city. Memorias V Congreso REDU, 453-457.",
-  "Potential distribution of the Polylepis genus in the Paute river basin under a climate change scenario", "Revista de La Facultad de Ciencias Químicas","12, 2018", "Journal Article", "Mejía-Coronel, D., Tonón, M., Abad, L. (2018). Distribución Potencial del Género Polylepis en la Cuenca del Río Paute bajo un Escenario de Cambio Climático. Revista de La Facultad de Ciencias Químicas., December(19), 21-37.",
-    "Water quality and environmental variables in endangered amphibia habitats in Cuenca urban area", "Revista de La Facultad de Ciencias Químicas", "11, 2017", "Journal Article", "Abad, L., Mejía, D., León, P., Cárdenas, I., Pacheco, B., Tonón, M. (2017). Calidad del Agua y Variables Ambientales en Hábitats para Anfibios Amenazados en la Zona Urbana de Cuenca. Revista de La Facultad de Ciencias Químicas. Universidad de Cuenca.",
+  # "Potential distribution of the Polylepis genus in the Paute river basin under a climate change scenario", "Revista de La Facultad de Ciencias Químicas","12, 2018", "Journal Article", "Mejía-Coronel, D., Tonón, M., \\textbf{Abad, L.} (2018). Distribución Potencial del Género Polylepis en la Cuenca del Río Paute bajo un Escenario de Cambio Climático. Revista de La Facultad de Ciencias Químicas., December(19), 21-37.",
+    "Water quality and environmental variables in endangered amphibia habitats in Cuenca urban area", "Revista de La Facultad de Ciencias Químicas", "11, 2017", "Journal Article", "\\textbf{Abad, L.}, Mejía, D., León, P., Cárdenas, I., Pacheco, B., Tonón, M. (2017). Calidad del Agua y Variables Ambientales en Hábitats para Anfibios Amenazados en la Zona Urbana de Cuenca. Revista de La Facultad de Ciencias Químicas. Universidad de Cuenca.",
   "Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city", "XVI Conferencia de Sistemas de Información Geográfica","09, 2017","Conference Proceedings","\\textbf{Abad, L.}, Mejía-Coronel, D. (2017). Estimación De La Concentración De Material Particulado Menor a 10 Micras a Través De Sensores Remotos En El Área Urbana De La Ciudad De Cuenca. In XVI Conferencia de Sistemas de Información Geográfica (pp. 381-390). Cuenca, Ecuador. Universidad del Azuay."
 ) %>% 
   mutate(date = as.Date(paste("01", date), format = "%d %m, %Y")) %>% 
@@ -244,10 +244,10 @@ tribble(
 tribble(
   ~ name, ~ acronym, ~ date, ~study_area,
   "Smarter Targeting of Erosion Control", "STEC", "2018 - 2023", "NZ", 
-  "The impact of mass movements on alpine trails and huts assessed by EO data", "MontEO \\href{http://monteo.zgis.at/}{\\faIcon{link}}", "2020 - 2021", "AT", 
-  "Detection and Analysis of Landslide-induced River Course Changes and Lake Formation", "RiCoLa \\href{http://landslides-and-rivers.sbg.ac.at/}{\\faIcon{link}}", "2017 - 2020", "AT, NZ, TW", 
-  "Observation and Reporting of Landscape Dynamics by Citizens", "citizenMorph \\href{http://citizenmorph.sbg.ac.at/}{\\faIcon{link}}", "2018 - 2020", "AT, DE, IS", 
-  "Mapping, Monitoring and Modelling the Spatio-Temporal Dynamics of Land Surface Morphology", "MORPH \\href{http://morph.sbg.ac.at/}{\\faIcon{link}}", "2016 - 2020", "IS"
+  "The impact of mass movements on alpine trails and huts assessed by EO data", "MontEO \\href{http://monteo.zgis.at/}{\\tiny{\\faIcon{link}}}", "2020 - 2021", "AT", 
+  "Detection and Analysis of Landslide-induced River Course Changes and Lake Formation", "RiCoLa \\href{http://landslides-and-rivers.sbg.ac.at/}{\\tiny{\\faIcon{link}}}", "2017 - 2020", "AT, NZ, TW", 
+  "Observation and Reporting of Landscape Dynamics by Citizens", "citizenMorph \\href{http://citizenmorph.sbg.ac.at/}{\\tiny{\\faIcon{link}}}", "2018 - 2020", "AT, DE, IS", 
+  "Mapping, Monitoring and Modelling the Spatio-Temporal Dynamics of Land Surface Morphology", "MORPH \\href{http://morph.sbg.ac.at/}{\\tiny{\\faIcon{link}}}", "2016 - 2020", "IS"
 ) %>% 
   detailed_entries(with = acronym, what = name, when = date, where = study_area, .protect=FALSE)  
 ```
@@ -261,9 +261,9 @@ tribble(
 ```{r dev}
 tribble(
   ~ name, ~ acronym, ~ type,
-  "Tidy Geospatial Networks in R", "sfnetworks \\href{https://luukvdmeer.github.io/sfnetworks/}{\\faIcon{link}}", "R Package",
+  "Tidy Geospatial Networks in R", "sfnetworks \\href{https://luukvdmeer.github.io/sfnetworks/}{\\tiny{\\faIcon{link}}}", "R Package",
   "Bicycle Network Analysis Score for UK and NL",
-  "BNA-EU \\href{https://github.com/loreabad6/masters-thesis-geotech}{\\faIcon{link}}", "RMarkdown Reporting"
+  "BNA-EU \\href{https://github.com/loreabad6/masters-thesis-geotech}{\\tiny{\\faIcon{link}}}", "RMarkdown Reporting"
 ) %>% 
   detailed_entries(with = acronym, what = name, where = type, .protect=FALSE)  
 ```
@@ -275,12 +275,12 @@ tribble(
 ```{r presentations}
 tribble(
   ~ title, ~ link, ~ event, ~ date, 
-  "Implementing geo citizen science solutions: experiences from the citizenMorph project", "Full paper presentation in session C43: Spatial Citizens Science \\href{https://www.conftool.com/giweek2020/index.php?page=browseSessions&form_session=202}{\\faIcon{link}}", "Gi-Forum 2020", "07, 2020",
-  "Tidy Geospatial Networks in R: Introducing the sfnetworks package", "Webinar \\& Hackathon \\href{https://sfnetworks.github.io/sfnetworks-webinar/slides}{\\faIcon{link}}", "e-Rum 2020 satellite event", "06, 2020",
-  "Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series", "Display in session Natural Hazards NH6.1 \\href{https://presentations.copernicus.org/EGU2020/EGU2020-572_presentation.pdf}{\\faIcon{link}}", "EGU 2020", "05, 2020",
-  "Intro to spatial vector data analysis with R","R spatial crash course \\href{https://luukvdmeer.github.io/maptimeR/exercises.html}{\\faIcon{link}}", "Maptime Salzburg", "02, 2020",
-  "Spatial networks in R with sf and tidygraph", "Blogpost \\href{https://www.r-spatial.org/r/2019/09/26/spatial-networks.html}{\\faIcon{link}}", "r-spatial blog", "09, 2019",
-  "Bicycle Network Analysis for Lisbon", "Short Paper Presentation in the 2nd Open Data for Open Cities Workshop \\href{https://github.com/GeoTecINIT/OpenData4OpenCities/blob/master/Presentations/AGILE_2018_Presentation_Abad-vdMeer.pdf}{\\faIcon{link}}", "AGILE Workshop: OD4OC", "06, 2018",
+  "Implementing geo citizen science solutions: experiences from the citizenMorph project", "Full paper presentation in session C43: Spatial Citizens Science \\href{https://www.conftool.com/giweek2020/index.php?page=browseSessions&form_session=202}{\\tiny{\\faIcon{link}}}", "Gi-Forum 2020", "07, 2020",
+  "Tidy Geospatial Networks in R: Introducing the sfnetworks package", "Webinar \\& Hackathon \\href{https://sfnetworks.github.io/sfnetworks-webinar/slides}{\\tiny{\\faIcon{link}}}", "e-Rum 2020 satellite event", "06, 2020",
+  "Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series", "Display in session Natural Hazards NH6.1 \\href{https://presentations.copernicus.org/EGU2020/EGU2020-572_presentation.pdf}{\\tiny{\\faIcon{link}}}", "EGU 2020", "05, 2020",
+  "Intro to spatial vector data analysis with R","R spatial crash course \\href{https://luukvdmeer.github.io/maptimeR/exercises.html}{\\tiny{\\faIcon{link}}}", "Maptime Salzburg", "02, 2020",
+  "Spatial networks in R with sf and tidygraph", "Blogpost \\href{https://www.r-spatial.org/r/2019/09/26/spatial-networks.html}{\\tiny{\\faIcon{link}}}", "r-spatial blog", "09, 2019",
+  "Bicycle Network Analysis for Lisbon", "Short Paper Presentation in the 2nd Open Data for Open Cities Workshop \\href{https://github.com/GeoTecINIT/OpenData4OpenCities/blob/master/Presentations/AGILE_2018_Presentation_Abad-vdMeer.pdf}{\\tiny{\\faIcon{link}}}", "AGILE Workshop: OD4OC", "06, 2018",
   "Exploring Space-Time Patterns Of Volunteered Cycling Data In An Intermediate City", "Abstract Presentation", "GeoMundus 2017", "11, 2017"
 ) %>% 
   detailed_entries(with = title, what = link, where = event, when = date, .protect=FALSE)  
@@ -302,20 +302,20 @@ tribble(
   brief_entries(what = area, when = date, with = org, .protect = F)
 ```
 
-\pagebreak
-
 \faIcon{users} Memberships
 ===============================
 ```{r org}
 tribble(
   ~ org, ~ date,
-  "R-Ladies Global \\href{https://rladies.org/austria-rladies/name/lorena-abad/}{\\faIcon{link}}", "since 2020",
-  "Women in Geospatial \\href{https://speakers.womeningeospatial.org/speakers}{\\faIcon{link}}", "since 2020",
+  "R-Ladies Global \\href{https://rladies.org/austria-rladies/name/lorena-abad/}{\\tiny{\\faIcon{link}}}", "since 2020",
+  "Women in Geospatial \\href{https://speakers.womeningeospatial.org/speakers}{\\tiny{\\faIcon{link}}}", "since 2020",
   "European Geosciences Union", "2020",
   "Erasmus Mundus Association", "since 2020"
 ) %>% 
   brief_entries(what = org, when = date, .protect = F)
 ```
+
+\pagebreak
 
 \faIcon{brain} Skills
 ================================
@@ -345,9 +345,9 @@ tribble(
 ```{r events}
 tribble(
   ~ event, ~ date, ~ place,
-  "e-Rum 2020 satellite event: \\textit{sfnetworks} Webinar and Hackathon \\href{https://2020.erum.io/program/hackathon/}{\\faIcon{link}}", "06, 2020", "Online Event",
+  "e-Rum 2020 satellite event: \\textit{sfnetworks} Webinar and Hackathon \\href{https://2020.erum.io/program/hackathon/}{\\tiny{\\faIcon{link}}}", "06, 2020", "Online Event",
   "citizenMorph App Testing Workshop", "09, 2019", "Höfn, IS",
-  "GeoMundus 2018 \\href{http://www.geomundus.org/2018/}{\\faIcon{link}}", "12, 2018", "Lisbon, PT",
+  "GeoMundus 2018 \\href{http://www.geomundus.org/2018/}{\\tiny{\\faIcon{link}}}", "12, 2018", "Lisbon, PT",
   "I University Simposium of Environmental Science Research", "06, 2016", "Cuenca, EC",
   "Vicepresident of the Student Association of Environmental Engineers", "2013 - 2014", "Cuenca, EC",
 ) %>% 
@@ -362,12 +362,12 @@ tribble(
 ```{r langforeign, results='markup'}
 data.frame(
   Skill = c("Reading", "Writing", "Listening","Speaking"),
-  Spanish = cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'),
-  English = cell_spec(c("C2","C1","C2","C2"), 'latex', color = '#009acd'),
-  French = cell_spec(c("B2","B2","B2","B2"), 'latex', color = '#4cb8dc'),
-  Portuguese = cell_spec(c("B1","B1","B1","B1"), 'latex', color = '#4cb8dc'),
-  German = cell_spec(c("A2","A1","B1","B1"), 'latex', color = '#7fcce6'),
-  Dutch = cell_spec(c("A2","A1","A2","A2"), 'latex', color = '#7fcce6')
+  Spanish = cell_spec(c(rep("Native", 4)), 'latex', color = '#009acd'), # #005c7b
+  English = cell_spec(c("C2","C1","C2","C2"), 'latex', color = '#009acd'), # #009acd
+  French = cell_spec(c("B2","B2","B2","B2"), 'latex', color = '#009acd'), # #4cb8dc
+  Portuguese = cell_spec(c("B1","B1","B1","B1"), 'latex', color = '#009acd'), # #4cb8dc
+  German = cell_spec(c("A2","A1","B1","B1"), 'latex', color = '#005c7b'), # #7fcce6
+  Dutch = cell_spec(c("A2","A1","A2","A2"), 'latex', color = '#009acd') # #7fcce6
 ) %>%
   kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
   kable_styling(full_width = F, font_size = 9) %>% 
@@ -382,36 +382,33 @@ data.frame(
   # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
 ```
 
+\faIcon{comment} References
+=============================
 
-```{r}
-# \faIcon{comment} Referees
-# =============================
-# 
-# \footnotesize
-# \begin{multicols}{3}
-# \begin{center}
-# \textbf{Prof. Dr. Edzer Pebesma} \newline
-# \faIcon{phone} +49 251 83-33081 \newline
-# \faIcon{at} edzer.pebesma@uni-muenster.de \newline
-# \faIcon{envelope} Institute for Geoinformatics, \newline
-# Heisenbergstraße 2, 48149, \newline
-# Münster, Germany
-# 
-# \textbf{Prof. Dr. Marco Painho} \newline
-# \faIcon{phone} +351 213 871 573 \newline
-# \faIcon{at} painho@novaims.unl.pt \newline
-# \faIcon{envelope} NOVA Information Management School\newline
-# Campus de Campolide, 1070-312\newline
-# Lisbon, Portugal
-# 
-# \textbf{Prof. Dr. Daniel Orellana} \newline
-# \faIcon{phone} (593 7) 4051000 Ext. 2112 \newline
-# \faIcon{at} daniel.orellana@ucuenca.edu.ec \newline
-# \faIcon{envelope} Grupo de Investigación LlactaLAB \newline
-# Av. 12 de Abril y Agustín Cueva, 010203 \newline
-# Cuenca, Ecuador
-# \end{center}
-# \end{multicols}
-# 
-# \normalsize
-```
+\footnotesize
+<!-- \begin{multicols}{3} -->
+<!-- \begin{center} -->
+\textbf{Prof. Dr. Edzer Pebesma} \newline
+\faIcon{phone} +49 251 83-33081 \newline
+\faIcon{at} edzer.pebesma@uni-muenster.de \newline
+\faIcon{envelope} Institute for Geoinformatics, \newline
+Heisenbergstraße 2, \newline
+48149 Münster, Germany
+
+\textbf{Prof. Dr. Marco Painho} \newline
+\faIcon{phone} +351 213 871 573 \newline
+\faIcon{at} painho@novaims.unl.pt \newline
+\faIcon{envelope} NOVA Information Management School\newline
+Campus de Campolide\newline
+1070-312 Lisbon, Portugal
+
+\textbf{Mag. Daniel Hölbling} \newline
+\faIcon{phone} +43 (0)662 8044 7581 \newline
+\faIcon{at} daniel.hoelbling@sbg.ac.at \newline
+\faIcon{envelope} Department of Geoinformatics - Z\_GIS \newline
+Schillerstrasse 30 \newline
+5020 Salzburg, Austria
+<!-- \end{center} -->
+<!-- \end{multicols} -->
+
+\normalsize
