@@ -276,7 +276,8 @@ tribble(
 
 ```{r presentations}
 tribble(
-  ~ title, ~ link, ~ event, ~ date, 
+  ~ title, ~ link, ~ event, ~ date,
+  "El rol de las tecnologías geoespaciales para el mapeo y monitoreo de peligros naturales", "Invited talk at the event 'Voces de la Ingeniería Ambiental' \\href{https://loreabad6.github.io/VocesAmbiental/presentacion.html}{\\tiny{\\faIcon{link}}}", "Voces Ambiental 2020", "09, 2020",
   "Implementing geo citizen science solutions: experiences from the citizenMorph project", "Full paper presentation in session C43: Spatial Citizens Science \\href{https://www.conftool.com/giweek2020/index.php?page=browseSessions&form_session=202}{\\tiny{\\faIcon{link}}}", "Gi-Forum 2020", "07, 2020",
   "Tidy Geospatial Networks in R: Introducing the sfnetworks package", "Webinar \\& Hackathon \\href{https://sfnetworks.github.io/sfnetworks-webinar/slides}{\\tiny{\\faIcon{link}}}", "e-Rum 2020 satellite event", "06, 2020",
   "Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series", "Display in session Natural Hazards NH6.1 \\href{https://presentations.copernicus.org/EGU2020/EGU2020-572_presentation.pdf}{\\tiny{\\faIcon{link}}}", "EGU 2020", "05, 2020",
