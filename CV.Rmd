@@ -15,7 +15,9 @@ orcid: 0000-0003-0554-734X
 skype:  lorena.abad2
 headcolor: 009ACD
 date: "`r format(Sys.time(), '%B %Y')`"
-output: vitae::awesomecv
+output: 
+  vitae::awesomecv:
+    keep_tex: true
 always_allow_html: yes
 header-includes:
   \usepackage{multicol}
@@ -206,6 +208,7 @@ tribble(
 tribble(
   ~ name, ~ journal, ~ date, ~type, ~ bib,
   # "Detecting landslide-dammed lakes on Sentinel-2 imagery and monitoring their spatio-temporal evolution after the Kaikōura earthquake in New Zealand", "Submitted to Remote Sensing of Environment","07, 2020", "Journal Article","\\textbf{Abad, L.}, Hölbling, D., Spiekermann, R., Prasicek, G., Dabiri, Z., Argentin, A.-L. (In review). Detecting landslide-dammed lakes on Sentinel-2 imagery and monitoring their spatio-temporal evolution after the Kaikōura earthquake in New Zealand. Remote Sensing of Environment.",
+  "Generation of Multi-Temporal Dems from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland", "GSA 2020 Connects Online", "10, 2020", "Conference Proceedings", "Dabiri, Z., Hölbling, D., \\textbf{Abad, L.}, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). Generation of Multi-Temporal Dems from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland. Geological Society of America Abstracts with Programs, 52 (6). \\textit{https://doi.org/10.1130/abs/2020AM-357105}",
   "Assessment of Landslide-Induced Geomorphological Changes in Hítardalur Valley, Iceland, Using Sentinel-1 and Sentinel-2 Data","Applied Sciences","08, 2020","Journal Article","Dabiri, Z., Hölbling, D., \\textbf{Abad, L.}, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). Assessment of Landslide-Induced Geomorphological Changes in Hítardalur Valley, Iceland, Using Sentinel-1 and Sentinel-2 Data. Applied Sciences, 10(17), 5848. \\textit{https://doi.org/10.3390/app10175848}",
   "Implementing Geo Citizen Science Solutions: Experiences from the citizenMorph Project", "Journal for Geographic Information Science", "06, 2020", "Journal Article", "Hennig, S., \\textbf{Abad, L.}, Hölbling, D., Tiede, D. (2020). Implementing Geo Citizen Science Solutions : Experiences from the citizenMorph Project. Journal for Geographic Information Science, 7(2), 3–14. \\textit{https://doi.org/10.1553/giscience2020}",
   "Distinct types of landslides in moraines associated with the post-LIA glacier thinning: Observations from the Kinzl Glacier, Huascarán, Peru", "Science of the Total Environment", "06, 2020", "Journal Article", "Emmer, A., Klimeš, J., Hölbling, D., \\textbf{Abad, L.}, Draebing, D., Skalák, P., Štěpánek, P., Zahradníček, P. (2020). Distinct types of landslides in moraines associated with the post-LIA glacier thinning: Observations from the Kinzl Glacier, Huascarán, Peru. Science of The Total Environment, 739, 139997. \\textit{https://doi.org/10.1016/j.scitotenv.2020.139997}",
@@ -277,7 +280,9 @@ tribble(
 ```{r presentations}
 tribble(
   ~ title, ~ link, ~ event, ~ date,
+  "Mapping and monitoring landslide-dammed lakes in Kaikōura, New Zealand, using the Google Earth Engine", "Lightning Talk at the Geo For Good 2020 Summit Public Sector Meetup \\href{https://www.youtube.com/watch?v=CbHYkUpCwCI&ab_channel=GoogleEarth}{\\tiny{\\faIcon{link}}}", "Geo for Good 2020", "10, 2020",
   "El rol de las tecnologías geoespaciales para el mapeo y monitoreo de peligros naturales", "Invited talk at the event 'Voces de la Ingeniería Ambiental' \\href{https://loreabad6.github.io/VocesAmbiental/presentacion.html}{\\tiny{\\faIcon{link}}}", "Voces Ambiental 2020", "09, 2020",
+  "Bicycle Network Analysis for assessing cyclability", "Presentation during Cycling Potential Hackathon: Lisbon \\href{https://github.com/U-Shift/cyclingpotential-hack}{\\tiny{\\faIcon{link}}}", "U-Shift event", "09, 2020",
   "Implementing geo citizen science solutions: experiences from the citizenMorph project", "Full paper presentation in session C43: Spatial Citizens Science \\href{https://www.conftool.com/giweek2020/index.php?page=browseSessions&form_session=202}{\\tiny{\\faIcon{link}}}", "Gi-Forum 2020", "07, 2020",
   "Tidy Geospatial Networks in R: Introducing the sfnetworks package", "Webinar \\& Hackathon \\href{https://sfnetworks.github.io/sfnetworks-webinar/slides}{\\tiny{\\faIcon{link}}}", "e-Rum 2020 satellite event", "06, 2020",
   "Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series", "Display in session Natural Hazards NH6.1 \\href{https://presentations.copernicus.org/EGU2020/EGU2020-572_presentation.pdf}{\\tiny{\\faIcon{link}}}", "EGU 2020", "05, 2020",
@@ -288,8 +293,6 @@ tribble(
 ) %>% 
   detailed_entries(with = title, what = link, where = event, when = date, .protect=FALSE)  
 ```
-
-\pagebreak
 
 \faIcon{medal} Distinctions
 ===============================
