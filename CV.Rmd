@@ -17,7 +17,7 @@ headcolor: 009ACD
 date: "`r format(Sys.time(), '%B %Y')`"
 output: 
   vitae::awesomecv:
-    keep_tex: true
+    keep_tex: false
 always_allow_html: yes
 header-includes:
   \usepackage{multicol}
@@ -108,15 +108,16 @@ names(exp) <- stringr::str_remove(string = names(exp), pattern = "employment-sum
 
 exp %>%
   filter(!stringr::str_detect(`role-title`, 'Teaching')) %>% 
+  filter(!stringr::str_detect(`role-title`, 'Internship')) %>% 
   mutate(description = c(
     'Researcher for the MORPH, RiCoLa, STEC, citizenMORPH, MontEO projects in the Landslide division of the OBIA group.',
     'Spatio-temporal data analyst for the project: "Study of Cyclists and Pedestrian Mobility Patterns in Cuenca for a Sustainable Mobility".',
     'CEDIA project "Geo-statistical Inference of Meteorological Data for Azuay and Chimborazo provinces".',
     'Project "Water Quality and Environmental Variables Monitoring in Artificial Habitats for Endangered Species in Cuenca".',
-    'Project "Determination of Particulate Matter PM10, PM2.5, and noise in Cuenca canton".',
+    'Project "Determination of Particulate Matter PM10, PM2.5, and noise in Cuenca canton".'
     # 'Introduction to Physics and Remote Sensing courses for the Environmental Engineering Career from Universidad de Cuenca.',
-    "Cartographic data gathering organization, topographic correction and categorization of urban land uses, scientific papers analysis for bibliographic review.",
-    "Assess the functioning state of Davis Station sensors, identify similarities and differences of two river basins hydrograms, analyze the effects of temperature and relative humidity on reference evapotranspiration calculation."
+    # "Cartographic data gathering organization, topographic correction and categorization of urban land uses, scientific papers analysis for bibliographic review.",
+    # "Assess the functioning state of Davis Station sensors, identify similarities and differences of two river basins hydrograms, analyze the effects of temperature and relative humidity on reference evapotranspiration calculation."
   )) %>%
   detailed_entries(
     with = paste(`role-title`, `department-name`, sep = ' - '),
@@ -131,8 +132,6 @@ exp %>%
     # .protect = FALSE
   )
 ```
-
-\pagebreak
 
 \faIcon{chalkboard} Teaching Experience
 ============================================
@@ -208,10 +207,10 @@ tribble(
 tribble(
   ~ name, ~ journal, ~ date, ~type, ~ bib,
   # "Detecting landslide-dammed lakes on Sentinel-2 imagery and monitoring their spatio-temporal evolution after the Kaikōura earthquake in New Zealand", "Submitted to Remote Sensing of Environment","07, 2020", "Journal Article","\\textbf{Abad, L.}, Hölbling, D., Spiekermann, R., Prasicek, G., Dabiri, Z., Argentin, A.-L. (In review). Detecting landslide-dammed lakes on Sentinel-2 imagery and monitoring their spatio-temporal evolution after the Kaikōura earthquake in New Zealand. Remote Sensing of Environment.",
-  "Generation of Multi-Temporal Dems from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland", "GSA 2020 Connects Online", "10, 2020", "Conference Proceedings", "Dabiri, Z., Hölbling, D., \\textbf{Abad, L.}, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). Generation of Multi-Temporal Dems from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland. Geological Society of America Abstracts with Programs, 52 (6). \\textit{https://doi.org/10.1130/abs/2020AM-357105}",
+  # "Generation of Multi-Temporal Dems from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland", "GSA 2020 Connects Online", "10, 2020", "Conference Proceedings", "Dabiri, Z., Hölbling, D., \\textbf{Abad, L.}, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). Generation of Multi-Temporal Dems from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland. Geological Society of America Abstracts with Programs, 52 (6). \\textit{https://doi.org/10.1130/abs/2020AM-357105}",
   "Assessment of Landslide-Induced Geomorphological Changes in Hítardalur Valley, Iceland, Using Sentinel-1 and Sentinel-2 Data","Applied Sciences","08, 2020","Journal Article","Dabiri, Z., Hölbling, D., \\textbf{Abad, L.}, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). Assessment of Landslide-Induced Geomorphological Changes in Hítardalur Valley, Iceland, Using Sentinel-1 and Sentinel-2 Data. Applied Sciences, 10(17), 5848. \\textit{https://doi.org/10.3390/app10175848}",
   "Implementing Geo Citizen Science Solutions: Experiences from the citizenMorph Project", "Journal for Geographic Information Science", "06, 2020", "Journal Article", "Hennig, S., \\textbf{Abad, L.}, Hölbling, D., Tiede, D. (2020). Implementing Geo Citizen Science Solutions : Experiences from the citizenMorph Project. Journal for Geographic Information Science, 7(2), 3–14. \\textit{https://doi.org/10.1553/giscience2020}",
-  "Distinct types of landslides in moraines associated with the post-LIA glacier thinning: Observations from the Kinzl Glacier, Huascarán, Peru", "Science of the Total Environment", "06, 2020", "Journal Article", "Emmer, A., Klimeš, J., Hölbling, D., \\textbf{Abad, L.}, Draebing, D., Skalák, P., Štěpánek, P., Zahradníček, P. (2020). Distinct types of landslides in moraines associated with the post-LIA glacier thinning: Observations from the Kinzl Glacier, Huascarán, Peru. Science of The Total Environment, 739, 139997. \\textit{https://doi.org/10.1016/j.scitotenv.2020.139997}",
+  # "Distinct types of landslides in moraines associated with the post-LIA glacier thinning: Observations from the Kinzl Glacier, Huascarán, Peru", "Science of the Total Environment", "06, 2020", "Journal Article", "Emmer, A., Klimeš, J., Hölbling, D., \\textbf{Abad, L.}, Draebing, D., Skalák, P., Štěpánek, P., Zahradníček, P. (2020). Distinct types of landslides in moraines associated with the post-LIA glacier thinning: Observations from the Kinzl Glacier, Huascarán, Peru. Science of The Total Environment, 739, 139997. \\textit{https://doi.org/10.1016/j.scitotenv.2020.139997}",
   "Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series -a case study after the 2016 Kaikōura Earthquake in New Zealand","EGU General Assembly 2020","03, 2020","Conference Proceedings","\\textbf{Abad, L.}, Hölbling, D., Spiekermann, R., Dabiri, Z., Prasicek, G., Argentin, A.-L. (2020). Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series -a case study after the 2016 Kaikōura Earthquake in New Zealand. EGU General Assembly 2020. \\textit{https://doi.org/10.5194/egusphere-egu2020-572}",
   # "Observation and Reporting of Landforms and Landscape Dynamics by Citizens","EGU General Assembly 2020","03, 2020","Conference Proceedings","Hölbling, D., Hennig, S., \\textbf{Abad, L.}, Ecke, S., Tiede, D. (2020). Observation and Reporting of Landforms and Landscape Dynamics by Citizens. EGU General Assembly 2020. \\textit{https://doi.org/10.5194/egusphere-egu2020-13593}",
   "Assessing the impact of mass movements on alpine trails and huts using EO data.","EGU General Assembly 2020","03, 2020","Conference Proceedings","Albrecht, F., Hölbling, D., \\textbf{Abad, L.}, Dabiri, Z., Reischenböck, G., Hipp, T., Resch, H., Resch, G. (2020). Assessing the impact of mass movements on alpine trails and huts using EO data. EGU General Assembly 2020. \\textit{https://doi.org/10.5194/egusphere-egu2020-21325}",
@@ -234,6 +233,8 @@ tribble(
   mutate(date = format(date, "%m, %Y")) %>% 
   detailed_entries(with = name, what = journal, when = date, where = type, why = bib, .protect=FALSE)
 ```
+
+\pagebreak
 
 \faIcon{lightbulb} Projects
 =====================================
