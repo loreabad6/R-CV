@@ -11,7 +11,6 @@ github: loreabad6
 linkedin: lorena-abad
 researchgate: Lorena_Abad2
 orcid: 0000-0003-0554-734X
-skype:  lorena.abad2
 headcolor: 009ACD
 date: "`r format(Sys.time(), '%B %Y')`"
 output: 
@@ -111,7 +110,7 @@ exp %>%
   filter(!stringr::str_detect(`role-title`, 'Teaching')) %>%
   filter(!stringr::str_detect(`role-title`, 'Internship')) %>% 
   mutate(description = c(
-    'Using remote sensing and GIS to study natural geohazards and their interrelations for the MontEO, STEC, RiCoLa, MORPH, citizenMORPH projects in the Landslide division of the Risk, Hazard & Climate research group.',
+    'Using remote sensing and GIS to study natural geohazards and their interrelations for the MontEO, STEC, RiCoLa projects in the Landslide division of the Risk, Hazard & Climate research group.',
     'Spatio-temporal data analyst for the project: "Study of Cyclists and Pedestrian Mobility Patterns in Cuenca for a Sustainable Mobility".',
     'CEDIA project "Geo-statistical Inference of Meteorological Data for Azuay and Chimborazo provinces".',
     'Project "Water Quality and Environmental Variables Monitoring in Artificial Habitats for Endangered Species in Cuenca".',
@@ -398,8 +397,8 @@ data.frame(
   Spanish = cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'), 
   English = cell_spec(c("C2","C1","C2","C2"), 'latex', color = '#009acd'), 
   French = cell_spec(c("B2","B2","B2","B2"), 'latex', color = '#4cb8dc'), 
+  German = cell_spec(c("B1","B1","B1","B1"), 'latex', color = '#7fcce6'), 
   Portuguese = cell_spec(c("B1","B1","B1","B1"), 'latex', color = '#4cb8dc'), 
-  German = cell_spec(c("A2","A1","B1","B1"), 'latex', color = '#7fcce6'), 
   Dutch = cell_spec(c("A2","A1","A2","A2"), 'latex', color = '#7fcce6') 
 ) %>%
   kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
