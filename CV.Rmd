@@ -5,7 +5,7 @@ address: |
          | Schillerstraße 30, 5020 Salzburg, Austria
 profilepic: lore.jpg
 phone: +43 662 8044 7582 
-email: "lorenacristina.abadcrespo@sbg.ac.at"
+email: "lorena.abad@plus.ac.at"
 twitter: loreabad6
 github: loreabad6
 linkedin: lorena-abad
@@ -110,7 +110,7 @@ exp %>%
   filter(!stringr::str_detect(`role-title`, 'Teaching')) %>%
   filter(!stringr::str_detect(`role-title`, 'Internship')) %>% 
   mutate(description = c(
-    'Using remote sensing and GIS to study natural geohazards and their interrelations for the MontEO, STEC, RiCoLa projects in the Landslide division of the Risk, Hazard & Climate research group.',
+    'Remote sensing and GIS specialist studying natural geohazards in the SliDEM, MontEO % STEC projects in the Risk, Hazard & Climate research group.',
     'Spatio-temporal data analyst for the project: "Study of Cyclists and Pedestrian Mobility Patterns in Cuenca for a Sustainable Mobility".',
     'CEDIA project "Geo-statistical Inference of Meteorological Data for Azuay and Chimborazo provinces".',
     'Project "Water Quality and Environmental Variables Monitoring in Artificial Habitats for Endangered Species in Cuenca".',
@@ -233,7 +233,7 @@ tribble(
   # "Exploring space-time patterns of volunteered cycling data in an intermediate city", "Memorias V Congreso REDU", "10, 2017", "Conference Proceedings", "\\textbf{Abad, L.}, Orellana, D. (2017). Exploring space-time patterns of volunteered cycling data in an intermediate city. Memorias V Congreso REDU, 453-457.",
   # "Potential distribution of the Polylepis genus in the Paute river basin under a climate change scenario", "Revista de La Facultad de Ciencias Químicas","12, 2018", "Journal Article", "Mejía-Coronel, D., Tonón, M., \\textbf{Abad, L.} (2018). Distribución Potencial del Género Polylepis en la Cuenca del Río Paute bajo un Escenario de Cambio Climático. Revista de La Facultad de Ciencias Químicas., December(19), 21-37.",
     # "Water quality and environmental variables in endangered amphibia habitats in Cuenca urban area", "Revista de La Facultad de Ciencias Químicas", "11, 2017", "Journal Article", "\\textbf{Abad, L.}, Mejía, D., León, P., Cárdenas, I., Pacheco, B., Tonón, M. (2017). Calidad del Agua y Variables Ambientales en Hábitats para Anfibios Amenazados en la Zona Urbana de Cuenca. Revista de La Facultad de Ciencias Químicas. Universidad de Cuenca.",
-  "Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city", "XVI Conferencia de Sistemas de Información Geográfica","09, 2017","Conference Proceedings","\\textbf{Abad, L.}, Mejía-Coronel, D. (2017). Estimación De La Concentración De Material Particulado Menor a 10 Micras a Través De Sensores Remotos En El Área Urbana De La Ciudad De Cuenca. In XVI Conferencia de Sistemas de Información Geográfica (pp. 381-390). Cuenca, Ecuador. Universidad del Azuay."
+  # "Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city", "XVI Conferencia de Sistemas de Información Geográfica","09, 2017","Conference Proceedings","\\textbf{Abad, L.}, Mejía-Coronel, D. (2017). Estimación De La Concentración De Material Particulado Menor a 10 Micras a Través De Sensores Remotos En El Área Urbana De La Ciudad De Cuenca. In XVI Conferencia de Sistemas de Información Geográfica (pp. 381-390). Cuenca, Ecuador. Universidad del Azuay."
 ) %>% 
   mutate(date = as.Date(paste("01", date), format = "%d %m, %Y")) %>% 
   dplyr::arrange(desc(date)) %>% 
@@ -304,7 +304,7 @@ tribble(
   detailed_entries(with = title, what = link, where = event, when = date, .protect=FALSE)  
 ```
 -->
-<!--
+
 \faIcon{medal} Distinctions
 ===============================
 
@@ -314,13 +314,13 @@ tribble(
   "Benigno Malo Prize - University Honors Award", "Universidad de Cuenca", "2018",
   "AGILE 2018 conference - travel grant", "AGILE \\& ESRI", "2018",
   "Erasmus Mundus Scholarship", "European Commission", "2017",
-  "Best Scientific Poster - 2nd International Summer School \\newline 
-``The Biodiversity of Genes, Species and Ecosystems''", "Universität Osnabrück","2015",
+  # "Best Scientific Poster - 2nd International Summer School \\newline 
+# ``The Biodiversity of Genes, Species and Ecosystems''", "Universität Osnabrück","2015",
   "Vanguardia Honors Program", "Universidad de Cuenca", "2014 - 2016"
 ) %>% 
   brief_entries(what = area, when = date, with = org, .protect = F)
 ```
--->
+
 <!--
 \faIcon{users} Memberships
 ===============================
@@ -380,7 +380,7 @@ tribble(
   "e-Rum 2020 satellite event: \\textit{sfnetworks} Webinar and Hackathon \\href{https://2020.erum.io/program/hackathon/}{\\tiny{\\faIcon{link}}}", "06, 2020", "Online Event",
   "citizenMorph App Testing Workshop", "09, 2019", "Höfn, IS",
   "GeoMundus 2018 \\href{http://www.geomundus.org/2018/}{\\tiny{\\faIcon{link}}}", "12, 2018", "Lisbon, PT",
-  "I University Simposium of Environmental Science Research", "06, 2016", "Cuenca, EC",
+  # "I University Simposium of Environmental Science Research", "06, 2016", "Cuenca, EC",
   "Vicepresident of the Student Association of Environmental Engineers", "2013 - 2014", "Cuenca, EC",
 ) %>% 
   brief_entries(what = event, when = date, with = place, .protect = F)
