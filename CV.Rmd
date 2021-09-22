@@ -110,7 +110,7 @@ exp %>%
   filter(!stringr::str_detect(`role-title`, 'Teaching')) %>%
   filter(!stringr::str_detect(`role-title`, 'Internship')) %>% 
   mutate(description = c(
-    'Remote sensing and GIS specialist studying natural geohazards in the SliDEM, MontEO % STEC projects in the Risk, Hazard & Climate research group.',
+    'Remote sensing and GIS specialist studying natural geohazards in the SliDEM, MontEO & STEC projects in the Risk, Hazard & Climate research group.',
     'Spatio-temporal data analyst for the project: "Study of Cyclists and Pedestrian Mobility Patterns in Cuenca for a Sustainable Mobility".',
     'CEDIA project "Geo-statistical Inference of Meteorological Data for Azuay and Chimborazo provinces".',
     'Project "Water Quality and Environmental Variables Monitoring in Artificial Habitats for Endangered Species in Cuenca".',
@@ -351,7 +351,7 @@ tribble(
 tribble(
    ~`Coding Languages`, ~Software, ~Other,
   "R -- SQL -- Python -- JavaScript",
-  "QGIS -- ArcGIS -- SAGA -- eCognition -- PostgreSQL -- PostGIS -- RStudio --  Earth Engine -- GIMP -- Mendeley",
+  "QGIS -- Earth Engine -- RStudio -- ArcGIS -- SAGA -- eCognition -- PostgreSQL -- GIMP -- Mendeley",
   "Git -- Markdown -- LaTex -- OpenStreetMap"
 ) %>%
   kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
