@@ -133,13 +133,16 @@ exp |>
     stringr::str_detect(`department-name`, "Carrera de Ingeniería Ambiental") ~ "08",
     TRUE ~ `end-date.month.value`
   )) |> 
-  mutate(count = c(4,1,1,1,1)) |> 
+  mutate(count = c(7,1,1,1,1)) |> 
   tidyr::uncount(count) |> 
   mutate(description = c(
-    'Remote sensing and GIS specialist studying natural geohazards in the Risk, Hazard & Climate research group for different projects.',
-    'Python package developer for "SliDEM: Assessing the suitability of DEMs derived from Sentinel-1 for landslide volume estimation".',
-    'Landslide susceptibility modeling for "MontEO: The impact of mass movements on alpine trails and huts assessed by EO data".',
-    'Automatic mapping of geomorphological features with deep learning and knowledge-based techniques for "STEC: Smarter Targeting of Erosion Control".',
+    'Remote sensing and GIS specialist studying natural geohazards in the Risk, Hazard & Climate research group for different projects:',
+    'SliDEM: Assessing the suitability of DEMs derived from Sentinel-1 for landslide volume estimation | Role: Python package developer.',
+    'MontEO: The impact of mass movements on alpine trails and huts assessed by EO data | Role: Susceptibility mapping.',
+    'STEC: Smarter Targeting of Erosion Control | Role: Mapping geomorphological features with deep learning and knowledge-based techniques.',
+    'RiCoLa: Detection and Analysis of Landslide-induced River Course Changes and Lake Formation.',
+    'MORPH: Mapping, Monitoring and Modelling the Spatio-Temporal Dynamics of Land Surface Morphology.',
+    'citizenMorph: Observation and Reporting of Landscape Dynamics by Citizens.',
     'Spatio-temporal data analyst for the project: "Study of Cyclists and Pedestrian Mobility Patterns in Cuenca for a Sustainable Mobility".',
     'CEDIA project "Geo-statistical Inference of Meteorological Data for Azuay and Chimborazo provinces".',
     'Project "Water Quality and Environmental Variables Monitoring in Artificial Habitats for Endangered Species in Cuenca".',
@@ -195,9 +198,9 @@ exp |>
 ```{r education}
 tribble(
   ~ study, ~ university, ~ loc, ~ dates, ~ details,
-    "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa \\& Westfälische Wilhelms-Universität Münster ","Lisbon, PT \\& Münster, DE", "2017 - 2019", "Covering Geospatial Data Mining, Geostatistics, Remote Sensing, Geographic Information Science, Cartography, Reference Systems, Spatial Data Science with R and Python, Unmanned Aerial Systems.",
+    "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa \\& Westfälische Wilhelms-Universität Münster ","Lisbon, PT \\& Münster, DE", "2017 - 2019", "Geospatial Data Mining, Geostatistics, Remote Sensing, Geographic Information Science, Spatial Data Science with R and Python, Unmanned Aerial Systems.",
     "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa \\& Westfälische Wilhelms-Universität Münster ","Lisbon, PT \\& Münster, DE", "2017 - 2019", "Masters Thesis: Validating a bike network analysis score based on open data as a connectivity measure of urban cycling infrastructure adapted for European cities. Supervised by Prof. Dr. Edzer Pebesma. URL: \\textit{http://hdl.handle.net/10362/67511}",
-  "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Covering Cartography, Remote Sensing, Ecology, Hydrology, Meteorology and Climatology, Environmental Studies, Natural Resources Management, among 66 subjects during 10 semesters.",
+  "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Environmental Studies, Natural Resources Management, Cartography, Remote Sensing, Ecology, Hydrology, Meteorology and Climatology, among 66 subjects.",
   "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Bachelor Thesis (in spanish): Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city. Supervised by MSc. Danilo Mejía Coronel. URL: \\textit{http://dspace.ucuenca.edu.ec/handle/123456789/25484}",
 ) |> 
   detailed_entries(study, dates, university, loc, details, .protect=FALSE)
@@ -211,8 +214,7 @@ tribble(
 For a complete list of publications see [*my Google Scholar profile*](https://scholar.google.com/citations?user=vDqPwpUAAAAJ&hl=en).
 
 - Dabiri, Z., Hölbling, D., **Abad, L.**, Guðmundsson, S. (2021). [*Comparing the Applicability of Sentinel-1 and Sentinel-2 for Mapping the Evolution of Ice-marginal Lakes in Southeast Iceland*](https://doi.org/10.1553/giscience2021_01_s46). GI_Forum, 1(1), 46–52.
-
-- Dabiri, Z., Hölbling, D., **Abad, L.**, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). [*Generation of Multi-Temporal Dems from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland*](https://doi.org/10.1130/abs/2020AM-357105). Geological Society of America Abstracts with Programs, 52 (6).
+<!-- - Dabiri, Z., Hölbling, D., **Abad, L.**, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). [*Generation of Multi-Temporal Dems from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland*](https://doi.org/10.1130/abs/2020AM-357105). Geological Society of America Abstracts with Programs, 52 (6). -->
 
 - Dabiri, Z., Hölbling, D., **Abad, L.**, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). [*Assessment of Landslide-Induced Geomorphological Changes in Hítardalur Valley, Iceland, Using Sentinel-1 and Sentinel-2 Data*](https://doi.org/10.3390/app10175848). Applied Sciences, 10(17), 5848.
 
@@ -290,12 +292,13 @@ tribble(
 ```
 -->
 
-\faIcon{medal} Distinctions
+\faIcon{medal} Awards & Distinctions
 ===============================
 
 ```{r dist}
 tribble(
   ~ area, ~ org, ~ date,
+  "ISC funding for {sfnetworks}", "R-Consortium", "2019",
   "Benigno Malo Prize - University Honors Award", "Universidad de Cuenca", "2018",
   "AGILE 2018 conference - travel grant", "AGILE \\& ESRI", "2018",
   "Erasmus Mundus Scholarship", "European Commission", "2017",
@@ -306,6 +309,18 @@ tribble(
   brief_entries(what = area, when = date, with = org, .protect = F)
 ```
 
+\faIcon{hand-holding-heart} Volunteer work
+===============================
+
+```{r vol}
+tribble(
+  ~ desc, ~ date,
+  "Group Peer Mentor in Women in Geospatial+ Mentorship Program", "2020-2021"
+) |> 
+  brief_entries(what = desc, when = date, .protect = F)
+```
+
+<!-- 
 \faIcon{users} Memberships
 ===============================
 ```{r org}
@@ -318,6 +333,7 @@ tribble(
 ) |> 
   brief_entries(what = org, when = date, .protect = F)
 ```
+-->
 
 \faIcon{brain} Skills
 ================================
@@ -346,6 +362,7 @@ tribble(
 
 <!-- \smallskip -->
 
+<!--
 \faIcon{calendar} Organizational skills
 ------------------------------
 ```{r events}
@@ -359,7 +376,8 @@ tribble(
 ) |> 
   brief_entries(what = event, when = date, with = place, .protect = F)
 ```
-
+  -->
+  
 \bigskip
 
 \faIcon{language} Languages
@@ -387,36 +405,45 @@ data.frame(
   # add_header_above(' ', line = F) |>
   # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
 ```
-<!--
+
 \faIcon{comment} References
 =============================
 
 \footnotesize
+
+- **Prof. Dr. Edzer Pebesma**, Institute for Geoinformatics, WWU, edzer.pebesma@uni-muenster.de
+
+- **Prof. Dr. Marco Painho** NOVA Information Management School, painho@novaims.unl.pt
+
+- **Dr. Daniel Hölbling**, Department of Geoinformatics - Z\_GIS, PLUS, daniel.hoelbling@plus.ac.at
+
+\normalsize
+
+<!-- \footnotesize -->
 <!-- \begin{multicols}{3} -->
 <!-- \begin{center} -->
-<!--
-\textbf{Prof. Dr. Edzer Pebesma} \newline
-\faIcon{phone} +49 251 83-33081 \newline
-\faIcon{at} edzer.pebesma@uni-muenster.de \newline
-\faIcon{envelope} Institute for Geoinformatics, \newline
-Heisenbergstraße 2, \newline
-48149 Münster, Germany
 
-\textbf{Prof. Dr. Marco Painho} \newline
-\faIcon{phone} +351 213 871 573 \newline
-\faIcon{at} painho@novaims.unl.pt \newline
-\faIcon{envelope} NOVA Information Management School\newline
-Campus de Campolide\newline
-1070-312 Lisbon, Portugal
+<!-- \textbf{Prof. Dr. Edzer Pebesma} \newline -->
+<!-- \faIcon{phone} +49 251 83-33081 \newline -->
+<!-- \faIcon{at} edzer.pebesma@uni-muenster.de \newline -->
+<!-- \faIcon{envelope} Institute for Geoinformatics \newline -->
+<!-- Heisenbergstraße 2, \newline -->
+<!-- 48149 Münster, Germany -->
 
-\textbf{Mag. Daniel Hölbling} \newline
-\faIcon{phone} +43 (0)662 8044 7581 \newline
-\faIcon{at} daniel.hoelbling@sbg.ac.at \newline
-\faIcon{envelope} Department of Geoinformatics - Z\_GIS \newline
-Schillerstrasse 30 \newline
-5020 Salzburg, Austria
+<!-- \textbf{Prof. Dr. Marco Painho} \newline -->
+<!-- \faIcon{phone} +351 213 871 573 \newline -->
+<!-- \faIcon{at} painho@novaims.unl.pt \newline -->
+<!-- \faIcon{envelope} NOVA Information Management School \newline -->
+<!-- Campus de Campolide\newline -->
+<!-- 1070-312 Lisbon, Portugal -->
+
+<!-- \textbf{Mag. Daniel Hölbling} \newline -->
+<!-- \faIcon{phone} +43 (0)662 8044 7581 \newline -->
+<!-- \faIcon{at} daniel.hoelbling@plus.ac.at \newline -->
+<!-- \faIcon{envelope} Department of Geoinformatics - Z\_GIS 'newline -->
+<!-- Schillerstrasse 30 \newline -->
+<!-- 5020 Salzburg, Austria -->
 <!-- \end{center} -->
 <!-- \end{multicols} -->
-<!--
-\normalsize
--->
+
+<!-- \normalsize -->
