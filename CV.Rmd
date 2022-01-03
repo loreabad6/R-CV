@@ -77,7 +77,7 @@ cities = st_sf(
 routes = cities |> 
   as_sfnetwork() |> 
   st_as_sf('edges') |> 
-   st_segmentize(units::set_units(100, m))
+  st_segmentize(units::set_units(100, m))
 
 ggplot() +
   geom_sf(data = world, color = 'white', lwd = 0.1) +
@@ -261,7 +261,7 @@ tribble(
 ```{r dev}
 tribble(
   ~ name, ~ acronym, ~ type,
-  "Landslide dammed-lakes detection and monitoring after the Kaikoura earthquake in New Zealand", "Kaikoura landslide dammed-lakes \\href{https://github.com/loreabad6/KaikouraDammedLakes_public}{\\tiny{\\faIcon{link}}}", "GEE project",
+  "Landslide dammed-lakes detection and monitoring after the Kaikōura earthquake in New Zealand", "Kaikoura landslide dammed-lakes \\href{https://github.com/loreabad6/KaikouraDammedLakes_public}{\\tiny{\\faIcon{link}}}", "GEE project",
   "Tidy Geospatial Networks in R", "sfnetworks \\href{https://luukvdmeer.github.io/sfnetworks/}{\\tiny{\\faIcon{link}}}", "R Package",
   "Bicycle Network Analysis Score for UK and NL",
   "BNA-EU \\href{https://github.com/loreabad6/masters-thesis-geotech}{\\tiny{\\faIcon{link}}}", "RMarkdown Reporting"
