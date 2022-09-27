@@ -72,7 +72,12 @@ cities = st_sf(
   geometry = cities_geom
   ) |>
   st_set_crs(4326) |>
-  mutate(label = c(paste(work,uni, sep = " "), rep(uni,2), work))
+  mutate(
+    label = c(
+      paste(work,uni, sep = " "),
+      rep(uni,2),
+      paste(work,uni, sep = " "))
+  )
 
 routes = cities |> 
   as_sfnetwork() |> 
@@ -116,7 +121,7 @@ names(exp) = stringr::str_remove(string = names(exp), pattern = "employment-summ
 
 exp |>
   filter(!stringr::str_detect(`role-title`, 'Teaching')) |>
-  filter(!stringr::str_detect(`role-title`, 'Internship')) |> 
+  filter(!stringr::str_detect(`role-title`, 'Internship')) |>
   mutate(`role-title` = case_when(
     stringr::str_detect(`department-name`, "Carrera de Ingeniería Ambiental") ~ "Research Assistant",
     TRUE ~ `role-title`
@@ -133,9 +138,10 @@ exp |>
     stringr::str_detect(`department-name`, "Carrera de Ingeniería Ambiental") ~ "08",
     TRUE ~ `end-date.month.value`
   )) |> 
-  mutate(count = c(7,1,1,1,1)) |> 
+  mutate(count = c(1,7,1,1,1,1)) |> 
   tidyr::uncount(count) |> 
   mutate(description = c(
+    'My research is focused on Earth observation data analysis techniques for geomorphology and landscape dynamics applications, mainly involved with the Risk, Hazard & Climate research group.',
     'Remote sensing and GIS specialist studying natural geohazards in the Risk, Hazard & Climate and EO Analytics research groups for different projects:',
     'SliDEM: Assessing the suitability of DEMs derived from Sentinel-1 for landslide volume estimation | Role: Python package developer.',
     'MontEO: The impact of mass movements on alpine trails and huts assessed by EO data | Role: Susceptibility mapping.',
@@ -192,12 +198,14 @@ exp |>
   )
 ```
 -->
+
 \faIcon{university} Education
 ==================================
 
 ```{r education}
 tribble(
   ~ study, ~ university, ~ loc, ~ dates, ~ details,
+    "PhD in Geoinformatics", "University of Salzburg","Salzburg, AT", "2022 - 2026", "Earth observation data analysis techniques for geomorphology and landscape dynamics applications.",
     "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa \\& Westfälische Wilhelms-Universität Münster ","Lisbon, PT \\& Münster, DE", "2017 - 2019", "Geospatial Data Mining, Geostatistics, Remote Sensing, Geographic Information Science, Spatial Data Science with R and Python, Unmanned Aerial Systems.",
     "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa \\& Westfälische Wilhelms-Universität Münster ","Lisbon, PT \\& Münster, DE", "2017 - 2019", "Masters Thesis: Validating a bike network analysis score based on open data as a connectivity measure of urban cycling infrastructure adapted for European cities. Supervised by Prof. Dr. Edzer Pebesma. URL: \\textit{http://hdl.handle.net/10362/67511}",
   "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Environmental Studies, Natural Resources Management, Cartography, Remote Sensing, Ecology, Hydrology, Meteorology and Climatology, among 66 subjects.",
@@ -213,24 +221,27 @@ tribble(
 
 For a complete list of publications see [*my Google Scholar profile*](https://scholar.google.com/citations?user=vDqPwpUAAAAJ&hl=en).
 
-- **Abad, L.**, Hölbling, D., Albrecht, F., Dias, H. C., Dabiri, Z., Reischenböck, G., Tešić, D. (2022). [*Mass movement susceptibility assessment of alpine infrastructure in the Salzkammergut area, Austria*](https://doi.org/https://doi.org/10.1016/j.ijdrr.2022.103009). International Journal of Disaster Risk Reduction, 103009. 
+- **Abad, L.**, Hölbling, D. W., Dabiri, Z., Robson, B. A. (2022). [*An open-source-based workflow for DEM generation from Sentinel-1 for landslide volume estimation*](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLVIII-4-W1-2022/5/2022/). ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 48, 4/W1-2022, p. 5-11.
 
-- **Abad, L.**, Hölbling, D. W., Dabiri, Z., Robson, B. A. (2022). [*An open-source Python package for DEM generation and landslide volume estimation based on Sentinel-1 imagery*](https://doi.org/10.5194/egusphere-egu22-693). EGU General Assembly 2022, Vienna, Austria.
+- **Abad, L.**, Hölbling, D., Albrecht, F., Dias, H. C., Dabiri, Z., Reischenböck, G., Tešić, D. (2022). [*Mass movement susceptibility assessment of alpine infrastructure in the Salzkammergut area, Austria*](https://doi.org/https://doi.org/10.1016/j.ijdrr.2022.103009). International Journal of Disaster Risk Reduction, 103009. 
 
 - **Abad, L.**, Hölbling, D., Spiekermann, R., Prasicek, G., Dabiri, Z., Argentin, A.-L. (2022). [*Detecting landslide-dammed lakes on Sentinel-2 imagery and monitoring their spatio-temporal evolution following the Kaikōura earthquake in New Zealand*](https://doi.org/10.1016/j.scitotenv.2022.153335). Science of The Total Environment, 820, 153335. 
 
 - Dabiri, Z., Hölbling, D., **Abad, L.**, Guðmundsson, S. (2021). [*Comparing the Applicability of Sentinel-1 and Sentinel-2 for Mapping the Evolution of Ice-marginal Lakes in Southeast Iceland*](https://doi.org/10.1553/giscience2021_01_s46). GI_Forum, 1(1), 46–52.
-<!-- - Dabiri, Z., Hölbling, D., **Abad, L.**, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). [*Generation of Multi-Temporal Dems from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland*](https://doi.org/10.1130/abs/2020AM-357105). Geological Society of America Abstracts with Programs, 52 (6). -->
+
+<!-- - Dabiri, Z., Hölbling, D., **Abad, L.**, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). [*Generation of Multi-Temporal DEMs from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland*](https://doi.org/10.1130/abs/2020AM-357105). Geological Society of America Abstracts with Programs, 52 (6). -->
 
 - Dabiri, Z., Hölbling, D., **Abad, L.**, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). [*Assessment of Landslide-Induced Geomorphological Changes in Hítardalur Valley, Iceland, Using Sentinel-1 and Sentinel-2 Data*](https://doi.org/10.3390/app10175848). Applied Sciences, 10(17), 5848.
 
 - Hennig, S., **Abad, L.**, Hölbling, D., Tiede, D. (2020). [*Implementing Geo Citizen Science Solutions: Experiences from the citizenMorph Project*](https://doi.org/10.1553/giscience2020). Journal for Geographic Information Science, 7(2), 3–14.
 
-- **Abad, L.**, Hölbling, D., Spiekermann, R., Dabiri, Z., Prasicek, G., Argentin, A.-L. (2020). [*Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series -a case study after the 2016 Kaikōura Earthquake in New Zealand*](https://doi.org/10.5194/egusphere-egu2020-572). EGU General Assembly 2020.
+<!-- - **Abad, L.**, Hölbling, D., Spiekermann, R., Dabiri, Z., Prasicek, G., Argentin, A.-L. (2020). [*Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series -a case study after the 2016 Kaikōura Earthquake in New Zealand*](https://doi.org/10.5194/egusphere-egu2020-572). EGU General Assembly 2020. -->
 
 - Hölbling, D., **Abad, L.**, Dabiri, Z., Prasicek, G., Tsai, T.-T., Argentin, A.-L. (2020). [*Mapping and Analyzing the Evolution of the Butangbunasi Landslide Using Landsat Time Series with Respect to Heavy Rainfall Events during Typhoons*](https://doi.org/10.3390/app10020630). Applied Sciences. 10, 630.
 
 - **Abad, L**., van der Meer, L. (2018). [*Quantifying Bicycle Network Connectivity in Lisbon Using Open Data*](https://doi.org/10.3390/info9110287). Information, 9(11), 14.
+
+<!-- - **Abad, L.**, Mejia, D., Leon, P., Cardenas, I., Pacheco, B., Tonon, M. (2017). [*Water Quality and Environmental Variables on Endangered Amphibious’ Habitats in Cuenca’s City Urban Area*](http://dspace.ucuenca.edu.ec/retrieve/0c371040-81df-45c9-9167-37f5a1e5dc32/documento.pdf) (Spanish). Revista de la Facultad de Ciencias Quimicas, 18. p. 18-34. -->
 
 \normalsize
 
@@ -321,36 +332,37 @@ tribble(
 ```
 -->
 
-\faIcon{medal} Awards & Distinctions
-===============================
+<!-- \faIcon{medal} Awards & Distinctions -->
+<!-- =============================== -->
 
 ```{r dist}
-tribble(
-  ~ area, ~ org, ~ date,
-    "Copernicus Masters Austria price (2nd place)", "Copernicus Masters", "2020",
-  "ISC funding for {sfnetworks}", "R-Consortium", "2019",
-  "Benigno Malo Prize - University Honors Award", "Universidad de Cuenca", "2018",
-  "AGILE 2018 conference - travel grant", "AGILE \\& ESRI", "2018",
-  "Erasmus Mundus Scholarship", "European Commission", "2017",
-  # "Best Scientific Poster - 2nd International Summer School \\newline 
-# ``The Biodiversity of Genes, Species and Ecosystems''", "Universität Osnabrück","2015",
-  "Vanguardia Honors Program", "Universidad de Cuenca", "2014 - 2016"
-) |> 
-  brief_entries(what = area, when = date, with = org, .protect = F)
+# tribble(
+#   ~ area, ~ org, ~ date,
+#   "FOSS4G 2022 conference - travel grant", "OSGeo Foundation", "2022",
+#   "Copernicus Masters Austria price (2nd place)", "Copernicus Masters", "2020",
+#   "ISC funding for {sfnetworks}", "R-Consortium", "2019",
+#   "Benigno Malo Prize - University Honors Award", "Universidad de Cuenca", "2018",
+#   "AGILE 2018 conference - travel grant", "AGILE \\& ESRI", "2018",
+#   "Erasmus Mundus Scholarship", "European Commission", "2017",
+#   # "Best Scientific Poster - 2nd International Summer School \\newline 
+# # ``The Biodiversity of Genes, Species and Ecosystems''", "Universität Osnabrück","2015",
+#   "Vanguardia Honors Program", "Universidad de Cuenca", "2014 - 2016"
+# ) |> 
+#   brief_entries(what = area, when = date, with = org, .protect = F)
 ```
 
-\faIcon{hand-holding-heart} Volunteer work
-===============================
+<!-- \faIcon{hand-holding-heart} Volunteer work -->
+<!-- =============================== -->
 
 ```{r vol}
-tribble(
-  ~ desc, ~ date,
-  "Group Peer Mentor in Women in Geospatial+ Mentorship Program", "2020-2021"
-) |> 
-  brief_entries(what = desc, when = date, .protect = F)
+# tribble(
+#   ~ desc, ~ date,
+#   "Group Peer Mentor in Women in Geospatial+ Mentorship Program", "2020-2021"
+# ) |>
+#   brief_entries(what = desc, when = date, .protect = F)
 ```
 
-<!-- 
+
 \faIcon{users} Memberships
 ===============================
 ```{r org}
@@ -363,7 +375,6 @@ tribble(
 ) |> 
   brief_entries(what = org, when = date, .protect = F)
 ```
--->
 
 \faIcon{brain} Skills
 ================================
@@ -392,23 +403,20 @@ tribble(
 
 <!-- \smallskip -->
 
-<!--
-\faIcon{calendar} Organizational skills
+<!-- \faIcon{calendar} Organizational skills -->
 ------------------------------
 ```{r events}
-tribble(
-  ~ event, ~ date, ~ place,
-  "e-Rum 2020 satellite event: \\textit{sfnetworks} Webinar and Hackathon \\href{https://2020.erum.io/program/hackathon/}{\\tiny{\\faIcon{link}}}", "06, 2020", "Online Event",
-  "citizenMorph App Testing Workshop", "09, 2019", "Höfn, IS",
-  "GeoMundus 2018 \\href{http://www.geomundus.org/2018/}{\\tiny{\\faIcon{link}}}", "12, 2018", "Lisbon, PT",
-  # "I University Simposium of Environmental Science Research", "06, 2016", "Cuenca, EC",
-  "Vicepresident of the Student Association of Environmental Engineers", "2013 - 2014", "Cuenca, EC",
-) |> 
-  brief_entries(what = event, when = date, with = place, .protect = F)
+# tribble(
+#   ~ event, ~ date, ~ place,
+#   "FOSS4G workshop - sfnetworks: Tidy Geospatial Networks in R \\href{https://github.com/sfnetworks/foss4g-workshop}{\\tiny{\\faIcon{link}}}", "08, 2022", "Florence, Italy",
+#   "e-Rum 2020 satellite event: \\textit{sfnetworks} Webinar and Hackathon \\href{https://2020.erum.io/program/hackathon/}{\\tiny{\\faIcon{link}}}", "06, 2020", "Online Event",
+#   "citizenMorph App Testing Workshop", "09, 2019", "Höfn, IS",
+#   "GeoMundus 2018 \\href{http://www.geomundus.org/2018/}{\\tiny{\\faIcon{link}}}", "12, 2018", "Lisbon, PT",
+#   "I University Simposium of Environmental Science Research", "06, 2016", "Cuenca, EC",
+#   "Vicepresident of the Student Association of Environmental Engineers", "2013 - 2014", "Cuenca, EC",
+# ) |> 
+#   brief_entries(what = event, when = date, with = place, .protect = F)
 ```
-  -->
-  
-\smallskip
 
 \faIcon{language} Languages
 -------------------------------
@@ -436,18 +444,18 @@ data.frame(
   # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
 ```
 
-\faIcon{comment} References
-=============================
+<!-- \faIcon{comment} References -->
+<!-- ============================= -->
 
-\footnotesize
+<!-- \footnotesize -->
 
-- **Prof. Dr. Edzer Pebesma**, Institute for Geoinformatics, WWU, edzer.pebesma@uni-muenster.de
+<!-- - **Prof. Dr. Edzer Pebesma**, Institute for Geoinformatics, WWU, edzer.pebesma@uni-muenster.de -->
 
-- **Prof. Dr. Marco Painho** NOVA Information Management School, painho@novaims.unl.pt
+<!-- - **Prof. Dr. Marco Painho** NOVA Information Management School, painho@novaims.unl.pt -->
 
-- **Dr. Daniel Hölbling**, Department of Geoinformatics - Z\_GIS, PLUS, daniel.hoelbling@plus.ac.at
+<!-- - **Dr. Daniel Hölbling**, Department of Geoinformatics - Z\_GIS, PLUS, daniel.hoelbling@plus.ac.at -->
 
-\normalsize
+<!-- \normalsize -->
 
 <!-- \footnotesize -->
 <!-- \begin{multicols}{3} -->
