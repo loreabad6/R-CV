@@ -227,13 +227,15 @@ For a complete list of publications see [*my Google Scholar profile*](https://sc
 
 - **Abad, L.**, Hölbling, D., Spiekermann, R., Prasicek, G., Dabiri, Z., Argentin, A.-L. (2022). [*Detecting landslide-dammed lakes on Sentinel-2 imagery and monitoring their spatio-temporal evolution following the Kaikōura earthquake in New Zealand*](https://doi.org/10.1016/j.scitotenv.2022.153335). Science of The Total Environment, 820, 153335. 
 
+- Hennig, S., **Abad, L.**, Hölbling, D., Tiede, D. (2022). [Citizen science and geomorphology: the citizenMorph pilot system for observing and reporting data on landforms](https://doi.org/10.1088/1748-9326/ac8235). Environmental Research Letters, 17(8), 085004. 
+
 - Dabiri, Z., Hölbling, D., **Abad, L.**, Guðmundsson, S. (2021). [*Comparing the Applicability of Sentinel-1 and Sentinel-2 for Mapping the Evolution of Ice-marginal Lakes in Southeast Iceland*](https://doi.org/10.1553/giscience2021_01_s46). GI_Forum, 1(1), 46–52.
 
 <!-- - Dabiri, Z., Hölbling, D., **Abad, L.**, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). [*Generation of Multi-Temporal DEMs from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland*](https://doi.org/10.1130/abs/2020AM-357105). Geological Society of America Abstracts with Programs, 52 (6). -->
 
 - Dabiri, Z., Hölbling, D., **Abad, L.**, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). [*Assessment of Landslide-Induced Geomorphological Changes in Hítardalur Valley, Iceland, Using Sentinel-1 and Sentinel-2 Data*](https://doi.org/10.3390/app10175848). Applied Sciences, 10(17), 5848.
 
-- Hennig, S., **Abad, L.**, Hölbling, D., Tiede, D. (2020). [*Implementing Geo Citizen Science Solutions: Experiences from the citizenMorph Project*](https://doi.org/10.1553/giscience2020). Journal for Geographic Information Science, 7(2), 3–14.
+<!-- - Hennig, S., **Abad, L.**, Hölbling, D., Tiede, D. (2020). [*Implementing Geo Citizen Science Solutions: Experiences from the citizenMorph Project*](https://doi.org/10.1553/giscience2020). Journal for Geographic Information Science, 7(2), 3–14. -->
 
 <!-- - **Abad, L.**, Hölbling, D., Spiekermann, R., Dabiri, Z., Prasicek, G., Argentin, A.-L. (2020). [*Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series -a case study after the 2016 Kaikōura Earthquake in New Zealand*](https://doi.org/10.5194/egusphere-egu2020-572). EGU General Assembly 2020. -->
 
