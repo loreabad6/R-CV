@@ -221,15 +221,17 @@ tribble(
 
 For a complete list of publications see [*my Google Scholar profile*](https://scholar.google.com/citations?user=vDqPwpUAAAAJ&hl=en).
 
+- **Abad, L.**, Hölbling, D., Spiekermann, R., Prasicek, G., Dabiri, Z., Argentin, A.-L. (2022). [*Detecting landslide-dammed lakes on Sentinel-2 imagery and monitoring their spatio-temporal evolution following the Kaikōura earthquake in New Zealand*](https://doi.org/10.1016/j.scitotenv.2022.153335). Science of The Total Environment, 820, 153335. 
+
 - **Abad, L.**, Hölbling, D. W., Dabiri, Z., Robson, B. A. (2022). [*An open-source-based workflow for DEM generation from Sentinel-1 for landslide volume estimation*](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLVIII-4-W1-2022/5/2022/). ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 48, 4/W1-2022, p. 5-11.
 
 - **Abad, L.**, Hölbling, D., Albrecht, F., Dias, H. C., Dabiri, Z., Reischenböck, G., Tešić, D. (2022). [*Mass movement susceptibility assessment of alpine infrastructure in the Salzkammergut area, Austria*](https://doi.org/https://doi.org/10.1016/j.ijdrr.2022.103009). International Journal of Disaster Risk Reduction, 103009. 
 
-- **Abad, L.**, Hölbling, D., Spiekermann, R., Prasicek, G., Dabiri, Z., Argentin, A.-L. (2022). [*Detecting landslide-dammed lakes on Sentinel-2 imagery and monitoring their spatio-temporal evolution following the Kaikōura earthquake in New Zealand*](https://doi.org/10.1016/j.scitotenv.2022.153335). Science of The Total Environment, 820, 153335. 
-
 - Hennig, S., **Abad, L.**, Hölbling, D., Tiede, D. (2022). [Citizen science and geomorphology: the citizenMorph pilot system for observing and reporting data on landforms](https://doi.org/10.1088/1748-9326/ac8235). Environmental Research Letters, 17(8), 085004. 
 
 - Dabiri, Z., Hölbling, D., **Abad, L.**, Guðmundsson, S. (2021). [*Comparing the Applicability of Sentinel-1 and Sentinel-2 for Mapping the Evolution of Ice-marginal Lakes in Southeast Iceland*](https://doi.org/10.1553/giscience2021_01_s46). GI_Forum, 1(1), 46–52.
+
+<!-- - Argentin, A. L., Robl, J., Prasicek, G., Hergarten, S., Hölbling, D., **Abad, L.**, Dabiri, Z. (2021). [*Controls on the formation and size of potential landslide dams and dammed lakes in the Austrian Alps*](https://doi.org/10.5194/nhess-21-1615-2021). Natural Hazards and Earth System Sciences, 21(5), 1615-1637.  -->
 
 <!-- - Dabiri, Z., Hölbling, D., **Abad, L.**, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). [*Generation of Multi-Temporal DEMs from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland*](https://doi.org/10.1130/abs/2020AM-357105). Geological Society of America Abstracts with Programs, 52 (6). -->
 
@@ -428,9 +430,9 @@ data.frame(
   Skill = c("Reading", "Writing", "Listening","Speaking"),
   Spanish = cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'), 
   English = cell_spec(c("C2","C1","C2","C2"), 'latex', color = '#009acd'), 
-  French = cell_spec(c("B2","B2","B2","B2"), 'latex', color = '#4cb8dc'), 
+  French = cell_spec(c("B2","B2","B2","B1"), 'latex', color = '#4cb8dc'), 
   German = cell_spec(c("B1","B1","B1","B1"), 'latex', color = '#4cb8dc'), 
-  Portuguese = cell_spec(c("B1","B1","B1","B1"), 'latex', color = '#4cb8dc'), 
+  Portuguese = cell_spec(c("B1","A2","B1","A2"), 'latex', color = '#4cb8dc'), 
   Dutch = cell_spec(c("A2","A1","A2","A2"), 'latex', color = '#7fcce6') 
 ) |>
   kable(booktabs = T, align = 'c', escape = F, format = "latex") |>
