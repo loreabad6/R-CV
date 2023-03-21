@@ -16,14 +16,10 @@ date: "`r format(Sys.time(), '%B %Y')`"
 output: 
   vitae::awesomecv:
     keep_tex: false
+    show_footer: true
+    includes:
+      in_header: header.txt
 always_allow_html: yes
-header-includes:
-  \usepackage{float}
-  \usepackage{multicol}
-  \usepackage{colortbl}
-  \arrayrulecolor{white}
-  \usepackage{hhline}
-  \definecolor{light-gray}{gray}{0.95}
 editor_options: 
   chunk_output_type: console
 ---

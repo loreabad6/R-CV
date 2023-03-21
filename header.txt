@@ -1,0 +1,6 @@
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{colortbl}
+\arrayrulecolor{white}
+\usepackage{hhline}
+\definecolor{light-gray}{gray}{0.95}
