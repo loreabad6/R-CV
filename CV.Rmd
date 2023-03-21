@@ -78,7 +78,7 @@ cities = st_sf(
 routes = cities |> 
   as_sfnetwork() |> 
   st_as_sf('edges') |> 
-  st_segmentize(units::set_units(100, m))
+  st_segmentize(units::set_units(1000, m))
 
 ggplot() +
   geom_sf(data = world, color = 'white', lwd = 0.1) +
@@ -96,9 +96,9 @@ ggplot() +
     linetype = 'dotted'
   ) +
   coord_sf(
-    crs = '+proj=robin',
-    xlim = c(-10000000, 4500000),
-    ylim = c(-650000,6500000)
+    crs = '+proj=vandg',
+    xlim = c(-11000000, 5000000),
+    ylim = c(-750000,7500000)
   ) +
   theme_void() +
   theme(
