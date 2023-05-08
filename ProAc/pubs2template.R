@@ -1,0 +1,6 @@
+library(bib2df)
+library(here)
+library(tidyverse)
+mypubs = bib2df(here("bib_files/mypubs.bib"))
+proac_template = read_csv(here("ProAc/ScientificOutput-Template.csv"))
+glimpse(proac_template)
