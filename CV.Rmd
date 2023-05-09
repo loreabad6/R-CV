@@ -202,8 +202,8 @@ exp |>
 tribble(
   ~ study, ~ university, ~ loc, ~ dates, ~ details,
     "PhD in Geoinformatics", "University of Salzburg","Salzburg, AT", "2022 - 2026", "Earth observation data analysis techniques for geomorphology and landscape dynamics applications.",
-    "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa \\& Westfälische Wilhelms-Universität Münster ","Lisbon, PT \\& Münster, DE", "2017 - 2019", "Geospatial Data Mining, Geostatistics, Remote Sensing, Geographic Information Science, Spatial Data Science with R and Python, Unmanned Aerial Systems.",
-    "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa \\& Westfälische Wilhelms-Universität Münster ","Lisbon, PT \\& Münster, DE", "2017 - 2019", "Masters Thesis: Validating a bike network analysis score based on open data as a connectivity measure of urban cycling infrastructure adapted for European cities. Supervised by Prof. Dr. Edzer Pebesma. URL: \\textit{http://hdl.handle.net/10362/67511}",
+    "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa \\& Universität Münster ","Lisbon, PT \\& Münster, DE", "2017 - 2019", "Geospatial Data Mining, Geostatistics, Remote Sensing, Geographic Information Science, Spatial Data Science with R and Python, Unmanned Aerial Systems.",
+    "Erasmus Mundus Msc. Geospatial Technologies", "Universidade Nova de Lisboa \\& Universität Münster ","Lisbon, PT \\& Münster, DE", "2017 - 2019", "Masters Thesis: Validating a bike network analysis score based on open data as a connectivity measure of urban cycling infrastructure adapted for European cities. Supervised by Prof. Dr. Edzer Pebesma. URL: \\textit{http://hdl.handle.net/10362/67511}",
   "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Environmental Studies, Natural Resources Management, Cartography, Remote Sensing, Ecology, Hydrology, Meteorology and Climatology, among 66 subjects.",
   "Environmental Engineer BSc.", "Universidad de Cuenca", "Cuenca, EC", "2011 - 2016", "Bachelor Thesis (in spanish): Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city. Supervised by MSc. Danilo Mejía Coronel. URL: \\textit{http://dspace.ucuenca.edu.ec/handle/123456789/25484}",
 ) |> 
@@ -449,7 +449,7 @@ data.frame(
 
 <!-- \footnotesize -->
 
-<!-- - **Prof. Dr. Edzer Pebesma**, Institute for Geoinformatics, WWU, edzer.pebesma@uni-muenster.de -->
+<!-- - **Prof. Dr. Edzer Pebesma**, Institute for Geoinformatics, University of Muenster, edzer.pebesma@uni-muenster.de -->
 
 <!-- - **Prof. Dr. Marco Painho** NOVA Information Management School, painho@novaims.unl.pt -->
 
