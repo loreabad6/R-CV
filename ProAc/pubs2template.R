@@ -3,6 +3,7 @@ library(RefManageR)
 library(scholar)
 library(here)
 library(tidyverse)
+library(knitcitations)
 
 id = "vDqPwpUAAAAJ&hl"
 name = "Lorena Abad"
@@ -50,12 +51,69 @@ mypubs_ext = mypubs |>
     )
   )
 
-mypubs_ext |> 
+pubs_ = mypubs_ext |> 
   mutate(title = str_remove_all(str_to_lower(TITLE), " ")) |> 
   left_join(
     mutate(pubs_edit, title = str_remove_all(str_to_lower(title), " ")),
     by = "title"
-  ) |> View()
+  ) |> 
+  mutate(
+    phd_pub = case_when(
+      pubid == "QIV2ME_5wuYC" ~ 1,
+      TRUE ~ 0
+    ),
+    supervisor = case_when(
+      phd_pub == 0 & supervisor == 1 ~ 0,
+      TRUE ~ supervisor
+    ),
+    publisher_ = case_when(
+      !is.na(JOURNAL) ~ JOURNAL,
+      !is.na(INSTITUTION) ~ INSTITUTION,
+      TRUE ~ NA_character_
+    ),
+    kind = case_when(
+      CATEGORY == "ARTICLE" ~ "Peer-reviewed paper",
+      CATEGORY == "INPROCEEDINGS" ~ "Conference proceedings",
+      pubid == "W7OEmFMy1HYC" ~ "MSc thesis",
+      pubid == "Tyk-4Ss8FVUC" ~ "BSc thesis",
+    ),
+    open_access = case_when(
+      is.na(link) ~ 0,
+      TRUE ~ 1
+    )
+  )
 
 proac_template = read_csv(here("ProAc/ScientificOutput-Template.csv"))
 glimpse(proac_template)
+
+pubs_proac = pubs_ |>
+  transmute(
+    Tag = BIBTEXKEY,
+    Year = YEAR,
+    Kind = kind, 
+    `First authored` = first_author,
+    `Single authored` = single_author,
+    `PhD publication` = phd_pub,
+    `Including PhD supervisor` = supervisor,
+    Publisher = publisher_,
+    `Open access` = open_access,
+    Link = link,
+    `Full reference` = NA,
+    `Current number of citations` = cites,
+    Title = TITLE
+  )
+
+write_csv(
+  pubs_proac, 
+  file = "ProAc/ScientificOutput-auto.csv",
+)
+
+ext_proac = read_csv("ProAc/ScientificOutput-manual.csv")
+
+proac = pubs_proac |>
+  rbind(ext_proac)
+write_csv(
+  proac, quote = "needed", 
+  file = "ProAc/ScientificOutput.csv"
+)
+
