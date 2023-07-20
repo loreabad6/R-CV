@@ -3,7 +3,6 @@ library(RefManageR)
 library(scholar)
 library(here)
 library(tidyverse)
-library(knitcitations)
 
 id = "vDqPwpUAAAAJ&hl"
 name = "Lorena Abad"
@@ -108,6 +107,7 @@ write_csv(
   file = "ProAc/ScientificOutput-auto.csv",
 )
 
+pubs_proac = read_csv("ProAc/ScientificOutput-auto.csv")
 ext_proac = read_csv("ProAc/ScientificOutput-manual.csv")
 
 proac = pubs_proac |>

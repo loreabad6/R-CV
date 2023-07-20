@@ -225,7 +225,7 @@ For a complete list of publications see [*my Google Scholar profile*](https://sc
 
 - Hennig, S., **Abad, L.**, Hölbling, D., Tiede, D. (2022). [Citizen science and geomorphology: the citizenMorph pilot system for observing and reporting data on landforms](https://doi.org/10.1088/1748-9326/ac8235). Environmental Research Letters, 17(8), 085004. 
 
-- Dabiri, Z., Hölbling, D., **Abad, L.**, Guðmundsson, S. (2021). [*Comparing the Applicability of Sentinel-1 and Sentinel-2 for Mapping the Evolution of Ice-marginal Lakes in Southeast Iceland*](https://doi.org/10.1553/giscience2021_01_s46). GI_Forum, 1(1), 46–52.
+<!-- - Dabiri, Z., Hölbling, D., **Abad, L.**, Guðmundsson, S. (2021). [*Comparing the Applicability of Sentinel-1 and Sentinel-2 for Mapping the Evolution of Ice-marginal Lakes in Southeast Iceland*](https://doi.org/10.1553/giscience2021_01_s46). GI_Forum, 1(1), 46–52. -->
 
 <!-- - Argentin, A. L., Robl, J., Prasicek, G., Hergarten, S., Hölbling, D., **Abad, L.**, Dabiri, Z. (2021). [*Controls on the formation and size of potential landslide dams and dammed lakes in the Austrian Alps*](https://doi.org/10.5194/nhess-21-1615-2021). Natural Hazards and Earth System Sciences, 21(5), 1615-1637.  -->
 
@@ -365,6 +365,7 @@ tribble(
 
 \faIcon{users} Memberships
 ===============================
+
 ```{r org}
 tribble(
   ~ org, ~ date,
@@ -372,7 +373,7 @@ tribble(
   "Women in Geospatial \\href{https://speakers.womeningeospatial.org/speakers}{\\tiny{\\faIcon{link}}}", "since 2020",
   "European Geosciences Union", "since 2020",
   "Erasmus Mundus Association", "since 2020"
-) |> 
+) |>
   brief_entries(what = org, when = date, .protect = F)
 ```
 
@@ -380,44 +381,6 @@ tribble(
 ================================
 
 \smallskip
-
-\faIcon{cogs} Technical skills
----------------------------------
-<!-- \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}} -->
-
-<!-- \par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt} -->
-
-```{r techtable, results='markup'}
-tribble(
-   ~`Coding Languages`, ~Software, ~Other,
-  "R -- Python -- SQL -- JavaScript",
-  "QGIS -- Earth Engine -- RStudio -- SAGA -- PostgreSQL -- ArcGIS -- eCognition -- GIMP -- Mendeley",
-  "Git -- Markdown -- LaTex -- OpenStreetMap"
-) |>
-  kable(booktabs = T, align = 'c', escape = F, format = "latex") |>
-  kable_styling(full_width = F, font_size = 9, latex_options = "HOLD_position") |> 
-  row_spec(0, bold = T, color = "#009acd") |> 
-  row_spec(1, bold = F, color = "#7f7f7f") |> 
-  column_spec(column = 1:3, width = '4.75cm')
-```
-
-<!-- \smallskip -->
-
-<!-- \faIcon{calendar} Organizational skills -->
-------------------------------
-```{r events}
-# tribble(
-#   ~ event, ~ date, ~ place,
-#   "FOSS4G workshop - sfnetworks: Tidy Geospatial Networks in R \\href{https://github.com/sfnetworks/foss4g-workshop}{\\tiny{\\faIcon{link}}}", "08, 2022", "Florence, Italy",
-#   "e-Rum 2020 satellite event: \\textit{sfnetworks} Webinar and Hackathon \\href{https://2020.erum.io/program/hackathon/}{\\tiny{\\faIcon{link}}}", "06, 2020", "Online Event",
-#   "citizenMorph App Testing Workshop", "09, 2019", "Höfn, IS",
-#   "GeoMundus 2018 \\href{http://www.geomundus.org/2018/}{\\tiny{\\faIcon{link}}}", "12, 2018", "Lisbon, PT",
-#   "I University Simposium of Environmental Science Research", "06, 2016", "Cuenca, EC",
-#   "Vicepresident of the Student Association of Environmental Engineers", "2013 - 2014", "Cuenca, EC",
-# ) |> 
-#   brief_entries(what = event, when = date, with = place, .protect = F)
-```
-
 \faIcon{language} Languages
 -------------------------------
 
@@ -443,6 +406,51 @@ data.frame(
   # add_header_above(' ', line = F) |>
   # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
 ```
+
+\faIcon{cogs} Technical skills
+---------------------------------
+<!-- \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}} -->
+
+<!-- \par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt} -->
+
+```{r techtable, results='markup'}
+tribble(
+   ~`Coding Languages`, ~Software, ~Other,
+  "R -- Python -- SQL -- JavaScript",
+  "QGIS -- Earth Engine -- RStudio -- SAGA -- PostgreSQL -- ArcGIS -- eCognition -- GIMP -- Mendeley",
+  "Git -- Markdown -- LaTex -- OpenStreetMap"
+) |>
+  kable(booktabs = T, align = 'c', escape = F, format = "latex") |>
+  kable_styling(full_width = F, font_size = 9, latex_options = "HOLD_position") |> 
+  row_spec(0, bold = T, color = "#009acd") |> 
+  row_spec(1, bold = F, color = "#7f7f7f") |> 
+  column_spec(column = 1:3, width = '4.75cm')
+```
+
+<!-- \faIcon{calendar} Organizational skills -->
+<!-- ------------------------------ -->
+```{r events}
+# tribble(
+#   ~ event, ~ date, ~ place,
+#   "FOSS4G workshop - sfnetworks: Tidy Geospatial Networks in R \\href{https://github.com/sfnetworks/foss4g-workshop}{\\tiny{\\faIcon{link}}}", "08, 2022", "Florence, Italy",
+#   "e-Rum 2020 satellite event: \\textit{sfnetworks} Webinar and Hackathon \\href{https://2020.erum.io/program/hackathon/}{\\tiny{\\faIcon{link}}}", "06, 2020", "Online Event",
+#   "citizenMorph App Testing Workshop", "09, 2019", "Höfn, IS",
+#   "GeoMundus 2018 \\href{http://www.geomundus.org/2018/}{\\tiny{\\faIcon{link}}}", "12, 2018", "Lisbon, PT",
+#   "I University Simposium of Environmental Science Research", "06, 2016", "Cuenca, EC",
+#   "Vicepresident of the Student Association of Environmental Engineers", "2013 - 2014", "Cuenca, EC",
+# ) |> 
+#   brief_entries(what = event, when = date, with = place, .protect = F)
+```
+
+\pagebreak
+
+[ProAc](https://www.fabiocrameri.ch/proac/) profile
+=====================================================
+
+```{r, out.width='100%', fig.align='center'}
+knitr::include_graphics("ProAc/ProAc-LorenaAbad-2023-Jul.png")
+```
+
 
 <!-- \faIcon{comment} References -->
 <!-- ============================= -->
