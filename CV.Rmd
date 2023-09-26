@@ -236,7 +236,7 @@ For a complete list of publications see [*my Google Scholar profile*](https://sc
 
 
 ```{r, out.width='66%', fig.align='center', fig.link="https://www.fabiocrameri.ch/proac/"}
-knitr::include_graphics("ProAc/ProAc-LorenaAbad-2023-Jul.png")
+knitr::include_graphics("ProAc/ProAc-LorenaAbad.png")
 ```
 <!-- [ProAc](https://www.fabiocrameri.ch/proac/) profile -->
 <!-- ----------------------------------------------------- -->
