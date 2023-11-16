@@ -320,8 +320,13 @@
 % Usage: \linkedin{<linked-in-nick>}
 \newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
 
+% Defines writer's twitter (optional)
 % Usage: \twitter{<twitter handle>}
 \newcommand*{\twitter}[1]{\def\@twitter{#1}}
+
+% Defines writer's mastodon (optional)
+% Usage: \mastodon{<mastodon handle>}
+\newcommand*{\mastodon}[1]{\def\@mastodon{#1}}
 
 % Defines writer's skype (optional)
 % Usage: \skype{<skype account>}
@@ -335,7 +340,6 @@
 % Usage: \xing{<xing name>}
 \newcommand*{\xing}[1]{\def\@xing{#1}}
 
-% Defines writer's twitter (optional)
 % Defines writer's extra informations (optional)
 % Usage: \extrainfo{<extra informations>}
 \newcommand*{\extrainfo}[1]{\def\@extrainfo{#1}}
@@ -503,6 +507,12 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
+        }%
+      \ifthenelse{\isundefined{\@mastodon}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://mastodon.com/\@mastodon}{\faMastodon\acvHeaderIconSep\@mastodon}%
         }%
       \ifthenelse{\isundefined{\@skype}}%
         {}%

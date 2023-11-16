@@ -7,6 +7,7 @@ profilepic: lore-2023.jpg
 phone: +43 662 8044 7582 
 email: "lorena.abad@plus.ac.at"
 twitter: loreabad6
+mastodon: loreabad6@fosstodon.org
 github: loreabad6
 linkedin: lorena-abad
 researchgate: Lorena_Abad2
