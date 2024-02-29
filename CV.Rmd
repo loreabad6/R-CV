@@ -438,7 +438,7 @@ column_spec(column = 1:3, width = '4.75cm')
 tribble(
   ~ org, ~ date,
   "R-Ladies Global \\href{https://rladies.org/austria-rladies/name/lorena-abad/}{\\tiny{\\faIcon{link}}}", "since 2020",
-  "Women in Geospatial \\href{https://speakers.womeningeospatial.org/speakers}{\\tiny{\\faIcon{link}}}", "since 2020",
+  "Women+ in Geospatial \\href{https://speakers.womeningeospatial.org/speakers}{\\tiny{\\faIcon{link}}}", "since 2020",
   "European Geosciences Union", "since 2020",
   "Erasmus Mundus Association", "since 2020"
 ) |>
