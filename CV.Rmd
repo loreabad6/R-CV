@@ -135,11 +135,13 @@ exp |>
     stringr::str_detect(`department-name`, "Carrera de Ingeniería Ambiental") ~ "08",
     TRUE ~ `end-date.month.value`
   )) |> 
-  mutate(count = c(1,7,1,1,1,1)) |> 
+  mutate(count = c(1,9,1,1,1,1)) |> 
   tidyr::uncount(count) |> 
   mutate(description = c(
     'Researching Earth observation data analysis techniques for geomorphology and landscape dynamics applications.',
-    'Remote sensing and GIS specialist studying natural geohazards in the Risk, Hazard & Climate and EO Analytics research groups for different projects:',
+    'Remote sensing and GIS specialist studying natural geohazards in the Risk, Hazard & Climate and EO Analytics research groups for different projects, including:',
+    'ROGER: EO-based rock glacier mapping and characterisation',
+    'SPACE4AD: Energieraumplanung zur Bestimmung neuer Biogasanlagenstandorte basierend auf Nicht-EOund Sentinel-2 Daten.',
     'SliDEM: Assessing the suitability of DEMs derived from Sentinel-1 for landslide volume estimation | Role: Python package developer.',
     'MontEO: The impact of mass movements on alpine trails and huts assessed by EO data | Role: Susceptibility mapping.',
     'STEC: Smarter Targeting of Erosion Control | Role: Mapping geomorphological features with deep learning and knowledge-based techniques.',
@@ -219,6 +221,7 @@ tribble(
 
 For a complete list of publications see [*my Google Scholar profile*](https://scholar.google.com/citations?user=vDqPwpUAAAAJ&hl=en).
 
+- **Abad, L.** (2024). [*Geomorphic landform monitoring with raster and vector data cubes*](https://doi.org/10.5194/egusphere-egu24-10019). EGU General Assembly 2024, Vienna, Austria.
 - **Abad, L.**, Hölbling, D., Spiekermann, R., Prasicek, G., Dabiri, Z., Argentin, A.-L. (2022). [*Detecting landslide-dammed lakes on Sentinel-2 imagery and monitoring their spatio-temporal evolution following the Kaikōura earthquake in New Zealand*](https://doi.org/10.1016/j.scitotenv.2022.153335). Science of The Total Environment, 820, 153335. 
 - **Abad, L.**, Hölbling, D. W., Dabiri, Z., Robson, B. A. (2022). [*An open-source-based workflow for DEM generation from Sentinel-1 for landslide volume estimation*](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLVIII-4-W1-2022/5/2022/). ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 48, 4/W1-2022, p. 5-11.
 - **Abad, L.**, Hölbling, D., Albrecht, F., Dias, H. C., Dabiri, Z., Reischenböck, G., Tešić, D. (2022). [*Mass movement susceptibility assessment of alpine infrastructure in the Salzkammergut area, Austria*](https://doi.org/https://doi.org/10.1016/j.ijdrr.2022.103009). International Journal of Disaster Risk Reduction, 103009. 
@@ -236,7 +239,7 @@ For a complete list of publications see [*my Google Scholar profile*](https://sc
 \normalsize
 
 
-```{r, out.width='66%', fig.align='center', fig.link="https://www.fabiocrameri.ch/proac/"}
+```{r, out.width='60%', fig.align='center', fig.link="https://www.fabiocrameri.ch/proac/"}
 knitr::include_graphics("ProAc/ProAc-LorenaAbad.png")
 ```
 <!-- [ProAc](https://www.fabiocrameri.ch/proac/) profile -->
