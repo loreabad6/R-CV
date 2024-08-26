@@ -50,7 +50,7 @@ library(gridExtra)
 \faIcon{plane} My journey
 ============================
 
-```{r edu_plot,fig.align='center', fig.width=6.2, fig.height=2.5, fig.showtext=TRUE, fig.dpi=300}
+```{r edu_plot,fig.align='center', fig.width=6.1, fig.height=2.25, fig.showtext=TRUE, fig.dpi=300}
 load.fontawesome()
 uni = fontawesome('fa-university')
 work = fontawesome('fa-briefcase')
@@ -135,13 +135,15 @@ exp |>
     stringr::str_detect(`department-name`, "Carrera de Ingeniería Ambiental") ~ "08",
     TRUE ~ `end-date.month.value`
   )) |> 
-  mutate(count = c(1,11,1,1,1,1)) |> 
+  mutate(count = c(1,13,1,1,1,1)) |> 
   tidyr::uncount(count) |> 
   mutate(description = c(
     'Researching Earth observation data analysis techniques for geomorphology and landscape dynamics applications.',
     'Remote sensing and GIS specialist studying natural geohazards in the Risk, Hazard & Climate and EO Analytics research groups for different projects, including:',
     'RAVEN: Radar satellite-based change detection in structures',
+    'LEONA: Landslide Information from Earth Observation to Support Humanitarian Aid',
     'ROGER: EO-based rock glacier mapping and characterisation',
+    'ReHIKE: Analysing Glacier Retreat Effects on Alpine Hiking Infrastructure using Earth Observation',
     'ArcDune: Sand dunes and Holocene environmental change in the European Arctic',
     'SPACE4AD: Energieraumplanung zur Bestimmung neuer Biogasanlagenstandorte basierend auf Nicht-EOund Sentinel-2 Daten.',
     'SliDEM: Assessing the suitability of DEMs derived from Sentinel-1 for landslide volume estimation | Role: Python package developer.',
