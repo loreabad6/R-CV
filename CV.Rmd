@@ -118,6 +118,7 @@ names(exp) = stringr::str_remove(string = names(exp), pattern = "employment-summ
 
 exp |>
   filter(!stringr::str_detect(`role-title`, 'Teaching')) |>
+  filter(!stringr::str_detect(`role-title`, 'Lecturer')) |>
   filter(!stringr::str_detect(`role-title`, 'Internship')) |>
   mutate(`role-title` = case_when(
     stringr::str_detect(`department-name`, "Carrera de Ingeniería Ambiental") ~ "Research Assistant",
@@ -182,10 +183,17 @@ exp |>
 
 ```{r teaching, eval = T}
 exp |>
-  filter(stringr::str_detect(`role-title`, 'Teaching')) |> 
+  filter(
+    stringr::str_detect(`role-title`, 'Teaching') |
+      stringr::str_detect(`role-title`, 'Lecturer')
+    ) |> 
+  mutate(count = c(2,2)) |> 
+  tidyr::uncount(count) |> 
   mutate(description = c(
-    'Remote Sensing course for the Environmental Engineering Career from the University of Cuenca.',
-    'Introduction to Physics course for the Environmental Engineering Career from the University of Cuenca.'
+    'IP: Application Development - GIS - R for reproducible spatial workflows',
+    'Scientific Methods and Writing',
+    'Remote Sensing',
+    'Introduction to Physics'
   )) |>
   detailed_entries(
     with = paste(`role-title`, `department-name`, sep = ' - '),
